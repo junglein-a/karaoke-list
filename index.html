@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<title>내 애창곡 리스트</title>
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="애창곡">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#16121f">
+<link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,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">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700;900&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<style>
+  :root {
+    --bg: #16121f;
+    --bg-elevated: #1e1830;
+    --surface: #241d38;
+    --surface-hover: #2b2342;
+    --hairline: #372c52;
+    --text-primary: #f2eef7;
+    --text-secondary: #a99fc0;
+    --text-faint: #6e6288;
+    --accent-cyan: #4ce0d2;
+    --accent-magenta: #ff3ea5;
+    --score-high: #4ce07a;
+    --score-mid-high: #4ce0d2;
+    --score-mid: #f4c542;
+    --score-low: #ff5c6e;
+    --tag-jarang: #f4c542;
+    --tag-bright: #4fc3e8;
+    --tag-fun: #ff5c7a;
+    --tag-calm: #7ed6a5;
+    --tag-warmup: #b48ef0;
+    --tag-oldies: #e0965a;
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Noto Sans KR', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    min-height: 100vh;
+    background:
+      radial-gradient(ellipse 600px 300px at 15% -5%, rgba(255,62,165,0.12), transparent 60%),
+      radial-gradient(ellipse 600px 400px at 90% 0%, rgba(76,224,210,0.10), transparent 60%),
+      var(--bg);
+  }
+
+  #app {
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100vh;
+    padding-bottom: 100px;
+    position: relative;
+  }
+
+  /* ---------- Header ---------- */
+  header.top {
+    padding: 28px 20px 16px;
+  }
+  .kicker {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    color: var(--accent-magenta);
+    text-transform: uppercase;
+    margin: 0 0 6px;
+  }
+  h1.title {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    margin: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    color: var(--text-primary);
+  }
+  h1.title .count {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+  .gear-btn {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    color: var(--text-secondary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 17px;
+    transition: transform 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .gear-btn:hover { color: var(--accent-cyan); border-color: var(--accent-cyan); transform: rotate(25deg); }
+
+  /* ---------- Search ---------- */
+  .search-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 20px 14px;
+    padding: 0 12px;
+    background: var(--surface);
+    border: 1.5px solid var(--hairline);
+    border-radius: var(--radius-sm);
+    transition: border-color 0.15s ease;
+  }
+  .search-row:focus-within { border-color: var(--accent-cyan); }
+  .search-icon { font-size: 13px; opacity: 0.6; }
+  .search-input {
+    flex: 1;
+    min-width: 0;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    padding: 11px 0;
+  }
+  .search-input::placeholder { color: var(--text-faint); }
+  .search-clear {
+    background: none;
+    border: none;
+    color: var(--text-faint);
+    font-size: 14px;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .search-clear:hover { color: var(--accent-magenta); }
+
+  /* ---------- Filter chips ---------- */
+  .filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 4px 20px 14px;
+  }
+
+  .chip {
+    flex: none;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1.5px solid var(--hairline);
+    background: var(--surface);
+    color: var(--text-secondary);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .chip .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--chip-color, var(--text-faint));
+  }
+  .chip.active {
+    color: #16121f;
+    background: var(--chip-color, var(--accent-cyan));
+    border-color: var(--chip-color, var(--accent-cyan));
+    font-weight: 700;
+  }
+  .chip.active .dot { background: #16121f; }
+  .chip.all.active {
+    background: var(--text-primary);
+    border-color: var(--text-primary);
+  }
+  .chip.chip-subtle {
+    opacity: 0.5;
+    font-size: 11.5px;
+    padding: 6px 11px;
+  }
+  .chip.chip-subtle.active {
+    opacity: 1;
+    font-size: 13px;
+    padding: 8px 14px;
+    font-weight: 700;
+  }
+
+  /* ---------- Sort control ---------- */
+  .io-row {
+    display: flex;
+    gap: 8px;
+    padding: 0 20px 14px;
+  }
+  .io-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 9px;
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    border: 1.5px solid var(--hairline);
+    color: var(--text-secondary);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .io-btn:hover { border-color: var(--accent-cyan); color: var(--accent-cyan); }
+
+  .sort-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 20px 16px;
+  }
+  .sort-label {
+    font-size: 12px;
+    color: var(--text-faint);
+    letter-spacing: 0.02em;
+  }
+  .sort-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 3px;
+    background: var(--surface);
+    border-radius: 999px;
+    padding: 4px;
+    border: 1px solid var(--hairline);
+  }
+  .sort-tab {
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 11.5px;
+    font-weight: 500;
+    padding: 7px 2px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    flex: 1 1 0;
+    min-width: 0;
+    white-space: nowrap;
+  }
+  .sort-tab.active {
+    background: var(--accent-magenta);
+    color: #16121f;
+    font-weight: 700;
+  }
+
+  /* ---------- List ---------- */
+  .list-wrap { padding: 0 20px; }
+
+  .group-header {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-faint);
+    letter-spacing: 0.1em;
+    padding: 14px 4px 8px;
+    position: sticky;
+    top: 0;
+    background: linear-gradient(var(--bg) 70%, transparent);
+    z-index: 2;
+  }
+
+  .song-card {
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius);
+    padding: 14px 14px 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.1s ease, border-color 0.15s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .song-card:hover { background: var(--surface-hover); border-color: var(--accent-cyan); }
+  .song-card:active { transform: scale(0.99); }
+
+  .heart-btn {
+    flex: none;
+    align-self: flex-start;
+    background: none;
+    border: none;
+    padding: 2px 2px 2px 0;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--text-faint);
+    transition: transform 0.12s ease;
+  }
+  .heart-btn:active { transform: scale(1.25); }
+  .heart-btn.on { color: var(--accent-magenta); }
+
+  .song-main { flex: 1; min-width: 0; }
+  .song-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .song-sub {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    margin: 0 0 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .song-sub .key { color: var(--text-faint); }
+  .song-tags {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+  .tag-pill {
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    color: #16121f;
+    background: var(--pill-color, var(--text-faint));
+  }
+
+  .score-led {
+    flex: none;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: #0d0a15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--hairline);
+  }
+  .score-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    flex: none;
+  }
+  .play-badge {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--text-faint);
+  }
+
+  /* ---------- Empty state ---------- */
+  .empty-state {
+    text-align: center;
+    padding: 60px 30px;
+    color: var(--text-secondary);
+  }
+  .empty-state .emoji { font-size: 40px; margin-bottom: 14px; }
+  .empty-state .msg1 { font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+  .empty-state .msg2 { font-size: 13px; color: var(--text-faint); }
+
+  /* ---------- FAB ---------- */
+  .fab {
+    position: fixed;
+    left: 50%;
+    bottom: 26px;
+    transform: translateX(calc(-50% + 190px));
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-magenta), #b3247d);
+    border: none;
+    color: white;
+    font-size: 28px;
+    font-weight: 300;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(255,62,165,0.35);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.15s ease;
+  }
+  .fab:hover { transform: translateX(calc(-50% + 190px)) scale(1.06); }
+  @media (max-width: 480px) {
+    .fab { transform: translateX(0); right: 20px; left: auto; }
+    .fab:hover { transform: scale(1.06); }
+  }
+
+  /* ---------- Modal ---------- */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 8, 16, 0.72);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+  .modal-backdrop.open { opacity: 1; pointer-events: auto; }
+  .modal-sheet {
+    background: var(--bg-elevated);
+    width: 100%;
+    max-width: 480px;
+    max-height: 88vh;
+    overflow-y: auto;
+    border-radius: 22px 22px 0 0;
+    padding: 22px 20px 28px;
+    transform: translateY(24px);
+    transition: transform 0.25s ease;
+    border-top: 1px solid var(--hairline);
+  }
+  .modal-backdrop.open .modal-sheet { transform: translateY(0); }
+
+  .modal-title {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 0 18px;
+  }
+
+  .field-group { margin-bottom: 16px; }
+  .field-label {
+    display: block;
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .field-input {
+    width: 100%;
+    background: var(--surface);
+    border: 1.5px solid var(--hairline);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    padding: 11px 12px;
+    outline: none;
+    transition: border-color 0.15s ease;
+  }
+  .field-input:focus { border-color: var(--accent-cyan); }
+
+  .score-field-row { display: flex; align-items: center; gap: 14px; }
+  .score-field-row input[type="range"] { flex: 1; accent-color: var(--accent-magenta); }
+  .score-field-row.is-unset { opacity: 0.35; pointer-events: none; }
+  .score-num {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    width: 46px;
+    text-align: center;
+  }
+  .score-toggle-btn {
+    margin-top: 8px;
+    background: none;
+    border: none;
+    color: var(--text-faint);
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 4px 0;
+  }
+  .score-toggle-btn:hover { color: var(--accent-cyan); }
+
+  .playcount-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    padding: 4px 0 6px;
+  }
+  .count-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1.5px solid var(--hairline);
+    background: var(--surface);
+    color: var(--text-primary);
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .count-btn:hover { border-color: var(--accent-cyan); color: var(--accent-cyan); }
+  .count-num {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+    min-width: 56px;
+    text-align: center;
+  }
+
+  .tag-select-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag-check {
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1.5px solid var(--hairline);
+    background: var(--surface);
+    color: var(--text-secondary);
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.15s ease;
+  }
+  .tag-check.checked {
+    color: #16121f;
+    background: var(--chk-color, var(--accent-cyan));
+    border-color: var(--chk-color, var(--accent-cyan));
+  }
+
+  .modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
+  }
+  .btn {
+    flex: 1;
+    padding: 13px;
+    border-radius: var(--radius-sm);
+    font-size: 14.5px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    font-family: 'Noto Sans KR', sans-serif;
+    transition: opacity 0.15s ease;
+  }
+  .btn:hover { opacity: 0.88; }
+  .btn.primary { background: var(--accent-magenta); color: #16121f; }
+  .btn.ghost { background: var(--surface); color: var(--text-secondary); border: 1.5px solid var(--hairline); }
+  .btn.danger { background: rgba(255,92,110,0.15); color: var(--score-low); border: 1.5px solid rgba(255,92,110,0.4); }
+
+  /* ---------- Tag manager ---------- */
+  .tag-manage-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .tag-manage-row:last-of-type { border-bottom: none; }
+  .color-dot {
+    width: 20px; height: 20px; border-radius: 50%;
+    flex: none;
+    background: var(--dot-color);
+    border: 2px solid rgba(255,255,255,0.2);
+  }
+  .tag-manage-row input.field-input { padding: 8px 10px; font-size: 14px; }
+  .icon-btn {
+    background: none;
+    border: none;
+    color: var(--text-faint);
+    font-size: 15px;
+    cursor: pointer;
+    padding: 6px;
+  }
+  .icon-btn:hover { color: var(--accent-cyan); }
+  .icon-btn.remove:hover { color: var(--score-low); }
+
+  .color-swatches { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+  .swatch {
+    width: 26px; height: 26px; border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+  .swatch.selected { border-color: var(--text-primary); }
+
+  .toast {
+    position: fixed;
+    bottom: 96px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    color: var(--text-primary);
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    z-index: 200;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(-4px); }
+</style>
+</head>
+<body>
+<div id="app">
+  <button class="gear-btn" id="gearBtn" title="설정">⚙</button>
+  <header class="top">
+    <p class="kicker">MY SETLIST</p>
+    <h1 class="title"><span id="titleText">내 애창곡</span> <span class="count" id="songCount">0곡</span></h1>
+  </header>
+
+  <div class="search-row">
+    <span class="search-icon">🔍</span>
+    <input class="search-input" id="searchInput" type="text" placeholder="제목, 가수, 키, 태그 검색" />
+    <button class="search-clear" id="searchClearBtn" style="display:none;">✕</button>
+  </div>
+
+  <div class="filter-row" id="filterRow"></div>
+
+  <div class="sort-row">
+    <span class="sort-label">정렬</span>
+    <div class="sort-tabs" id="sortTabs">
+      <button class="sort-tab" data-sort="alpha">가나다</button>
+      <button class="sort-tab" data-sort="scoreDesc">높은점수</button>
+      <button class="sort-tab" data-sort="scoreAsc">낮은점수</button>
+      <button class="sort-tab" data-sort="playDesc">많이부른</button>
+    </div>
+  </div>
+
+  <div class="list-wrap" id="listWrap"></div>
+</div>
+
+<button class="fab" id="addBtn">+</button>
+
+<!-- Add/Edit Song Modal -->
+<div class="modal-backdrop" id="songModalBackdrop">
+  <div class="modal-sheet">
+    <h2 class="modal-title" id="songModalTitle">노래 추가</h2>
+    <div class="field-group">
+      <label class="field-label">제목</label>
+      <input class="field-input" id="inputTitle" placeholder="예: Golden" />
+    </div>
+    <div class="field-group">
+      <label class="field-label">가수</label>
+      <input class="field-input" id="inputArtist" placeholder="예: Huntr/X" />
+    </div>
+    <div class="field-group">
+      <label class="field-label">키 변화</label>
+      <input class="field-input" id="inputKey" placeholder="예: 여+2 Db" />
+    </div>
+    <div class="field-group">
+      <label class="field-label">태그 (여러 개 선택 가능)</label>
+      <div class="tag-select-wrap" id="tagSelectWrap"></div>
+    </div>
+    <div class="field-group">
+      <label class="field-label">점수</label>
+      <div class="score-field-row" id="scoreFieldRow">
+        <input type="range" min="80" max="100" value="90" id="inputScoreRange" />
+        <span class="score-num" id="scoreNumDisplay">90</span>
+      </div>
+      <button class="score-toggle-btn" id="scoreToggleBtn" type="button">점수 없음으로 표시</button>
+    </div>
+    <div class="modal-actions">
+      <button class="btn ghost" id="cancelSongBtn">취소</button>
+      <button class="btn danger" id="deleteSongBtn" style="display:none;">삭제</button>
+      <button class="btn primary" id="saveSongBtn">저장</button>
+    </div>
+  </div>
+</div>
+
+<!-- Quick Edit Modal (부른 횟수 / 점수 / 태그만 빠르게 수정) -->
+<div class="modal-backdrop" id="quickEditBackdrop">
+  <div class="modal-sheet">
+    <h2 class="modal-title" id="quickEditTitle">노래 제목</h2>
+
+    <div class="field-group">
+      <label class="field-label">부른 횟수</label>
+      <div class="playcount-row">
+        <button class="count-btn" id="qeDecBtn">−</button>
+        <span class="count-num" id="qeCountDisplay">0</span>
+        <button class="count-btn" id="qeIncBtn">+</button>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">점수</label>
+      <div class="score-field-row" id="qeScoreFieldRow">
+        <input type="range" min="80" max="100" value="90" id="qeScoreRange" />
+        <span class="score-num" id="qeScoreDisplay">90</span>
+      </div>
+      <button class="score-toggle-btn" id="qeScoreToggleBtn" type="button">점수 없음으로 표시</button>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">태그</label>
+      <div class="tag-select-wrap" id="qeTagSelectWrap"></div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn ghost" id="qeDetailBtn">상세수정</button>
+      <button class="btn primary" id="qeSaveBtn">저장</button>
+    </div>
+  </div>
+</div>
+
+<!-- Tag Manager Modal -->
+<div class="modal-backdrop" id="tagModalBackdrop">
+  <div class="modal-sheet">
+    <h2 class="modal-title">설정</h2>
+
+    <div class="field-group">
+      <label class="field-label">이름 / 닉네임</label>
+      <input class="field-input" id="nicknameInput" placeholder="예: 소정" />
+      <p style="font-size:11.5px; color: var(--text-faint); margin: 8px 0 0;">입력하면 제목이 "○○ 애창곡"으로 바뀌어요. 비워두면 "내 애창곡"</p>
+    </div>
+
+    <div style="height:1px; background: var(--hairline); margin: 22px 0 18px;"></div>
+
+    <label class="field-label" style="margin-bottom:10px; display:block;">태그 관리</label>
+    <div id="tagManageList"></div>
+    <div class="field-group" style="margin-top:18px;">
+      <label class="field-label">새 태그 이름</label>
+      <input class="field-input" id="newTagName" placeholder="예: 최애곡" />
+      <div class="color-swatches" id="newTagSwatches"></div>
+      <label style="display:flex; align-items:center; gap:8px; margin-top:12px; font-size:13px; color: var(--text-secondary); cursor:pointer;">
+        <input type="checkbox" id="newTagLowFreq" style="accent-color: var(--accent-magenta);" />
+        가끔 사용하는 태그예요 (필터에서 작고 흐릿하게 표시)
+      </label>
+      <button class="btn primary" id="addTagBtn" style="width:100%; margin-top:14px;">태그 추가</button>
+    </div>
+
+    <div style="height:1px; background: var(--hairline); margin: 22px 0 18px;"></div>
+
+    <label class="field-label" style="margin-bottom:10px; display:block;">데이터 관리</label>
+    <div class="io-row" style="padding:0;">
+      <button class="io-btn" id="exportBtn">📤 엑셀로 내보내기</button>
+      <button class="io-btn" id="importBtn">📥 엑셀로 전체 교체</button>
+      <input type="file" id="importFileInput" accept=".xlsx,.xls,.csv" style="display:none;" />
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn ghost" id="closeTagModalBtn" style="width:100%;">닫기</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  const SONGS_KEY = 'karaoke:songs';
+  const TAGS_KEY = 'karaoke:tags';
+  const TAG_VERSION_KEY = 'karaoke:tagsVersion';
+  const NICKNAME_KEY = 'karaoke:nickname';
+  const SEED_VERSION_KEY = 'karaoke:seedVersion';
+  const SEED_VERSION = '3';
+
+  const PALETTE = ['#f4c542','#4fc3e8','#ff5c7a','#7ed6a5','#b48ef0','#e0965a','#ff8fd8','#6fd3ff','#a3e635','#ff9166','#5eead4'];
+
+  const DEFAULT_TAGS = [
+    { id: 't1', name: '평소', color: '#f4c542', lowFreq: false },
+    { id: 't2', name: '자랑용', color: '#ff5c7a', lowFreq: false },
+    { id: 't3', name: '분위기업', color: '#4fc3e8', lowFreq: false },
+    { id: 't4', name: '잔잔', color: '#7ed6a5', lowFreq: false },
+    { id: 't5', name: '목풀기', color: '#b48ef0', lowFreq: false },
+    { id: 't6', name: '연습중', color: '#e0965a', lowFreq: false },
+    { id: 't7', name: '가요', color: '#ff8fd8', lowFreq: false },
+    { id: 't8', name: '아이돌', color: '#6fd3ff', lowFreq: false },
+    { id: 't9', name: '해외', color: '#a3e635', lowFreq: false },
+    { id: 't10', name: '가끔', color: '#ff9166', lowFreq: true },
+    { id: 't11', name: '듀엣', color: '#5eead4', lowFreq: true },
+  ];
+  const TAG_SCHEMA_VERSION = '2';
+
+  // Seed data: imported from the user's uploaded 내_애창곡_리스트.xlsx (122 songs)
+  const DEFAULT_SONGS = [{"id": "s1", "title": "11:11", "artist": "태연", "key": "", "tagIds": ["t4", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s2", "title": "All for you", "artist": "정은지, 서인국", "key": "", "tagIds": ["t7", "t8", "t11"], "score": null, "playCount": 0, "fav": false}, {"id": "s3", "title": "Blackhole", "artist": "윤하", "key": "", "tagIds": ["t1", "t7"], "score": 94, "playCount": 1, "fav": false}, {"id": "s4", "title": "Blueming", "artist": "아이유", "key": "", "tagIds": ["t1", "t7"], "score": 89, "playCount": 1, "fav": false}, {"id": "s5", "title": "Butterfly", "artist": "러브홀릭스", "key": "", "tagIds": ["t3", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s6", "title": "Chandelier", "artist": "Sia", "key": "", "tagIds": ["t2", "t9"], "score": null, "playCount": 0, "fav": false}, {"id": "s7", "title": "Dinosaur", "artist": "악뮤", "key": "", "tagIds": ["t1", "t3", "t7"], "score": 90, "playCount": 0, "fav": false}, {"id": "s8", "title": "Discord", "artist": "QWER", "key": "", "tagIds": ["t1", "t3", "t8"], "score": 96, "playCount": 0, "fav": false}, {"id": "s9", "title": "Drive", "artist": "미연", "key": "", "tagIds": ["t1", "t8"], "score": null, "playCount": 0, "fav": false}, {"id": "s10", "title": "Drowning", "artist": "우즈", "key": "여", "tagIds": ["t2", "t8"], "score": 92, "playCount": 0, "fav": false}, {"id": "s11", "title": "Dynamite", "artist": "BTS", "key": "+1", "tagIds": ["t3", "t8"], "score": null, "playCount": 0, "fav": false}, {"id": "s12", "title": "Euphoria", "artist": "BTS", "key": "+6 D#m", "tagIds": ["t1", "t8"], "score": null, "playCount": 0, "fav": false}, {"id": "s13", "title": "Fall away", "artist": "김범수, 에일리", "key": "", "tagIds": ["t7", "t11"], "score": null, "playCount": 0, "fav": false}, {"id": "s14", "title": "Fire", "artist": "2NE1", "key": "", "tagIds": ["t3", "t8", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s15", "title": "Flashlight", "artist": "Jessie J", "key": "", "tagIds": ["t9", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s16", "title": "Golden", "artist": "Huntr/x", "key": "", "tagIds": ["t2", "t9"], "score": 95, "playCount": 0, "fav": false}, {"id": "s17", "title": "Halo", "artist": "Beyonce", "key": "", "tagIds": ["t2", "t9"], "score": 92, "playCount": 0, "fav": false}, {"id": "s18", "title": "Higher", "artist": "에일리", "key": "", "tagIds": ["t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s19", "title": "Home", "artist": "박효신", "key": "여+1 D", "tagIds": ["t2", "t7"], "score": 98, "playCount": 0, "fav": false}, {"id": "s20", "title": "Hype boy", "artist": "뉴진스", "key": "+2", "tagIds": ["t3", "t8"], "score": 95, "playCount": 0, "fav": false}, {"id": "s21", "title": "I am", "artist": "아이브", "key": "", "tagIds": ["t2", "t8"], "score": 96, "playCount": 0, "fav": false}, {"id": "s22", "title": "Kitsch", "artist": "아이브", "key": "", "tagIds": ["t3", "t8"], "score": null, "playCount": 0, "fav": false}, {"id": "s23", "title": "Let it go", "artist": "이디나멘젤", "key": "", "tagIds": ["t1", "t9"], "score": 99, "playCount": 0, "fav": false}, {"id": "s24", "title": "Let it go", "artist": "Demi Lovato", "key": "", "tagIds": ["t3", "t9"], "score": 99, "playCount": 0, "fav": false}, {"id": "s25", "title": "Like Water", "artist": "웬디", "key": "", "tagIds": ["t1", "t7"], "score": 93, "playCount": 0, "fav": false}, {"id": "s26", "title": "Listen", "artist": "Beyonce", "key": "", "tagIds": ["t2", "t9"], "score": 98, "playCount": 0, "fav": false}, {"id": "s27", "title": "Lonely", "artist": "2NE1", "key": "", "tagIds": ["t4", "t8", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s28", "title": "Love day", "artist": "정은지, 양요섭", "key": "", "tagIds": ["t8", "t11"], "score": null, "playCount": 0, "fav": false}, {"id": "s29", "title": "Love Dive", "artist": "아이브", "key": "", "tagIds": ["t3", "t8", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s30", "title": "Love wins all", "artist": "아이유", "key": "", "tagIds": ["t2", "t7"], "score": 96, "playCount": 1, "fav": false}, {"id": "s31", "title": "Maria", "artist": "김아중", "key": "", "tagIds": ["t3", "t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s32", "title": "Mercy", "artist": "Duffy", "key": "", "tagIds": ["t3", "t9", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s33", "title": "Not a dream", "artist": "송소희", "key": "", "tagIds": ["t1", "t7"], "score": 93, "playCount": 1, "fav": false}, {"id": "s34", "title": "Pop/Star", "artist": "K/DA", "key": "", "tagIds": ["t3", "t9"], "score": 92, "playCount": 1, "fav": false}, {"id": "s35", "title": "Rebel heart", "artist": "아이브", "key": "", "tagIds": ["t1", "t8"], "score": 97, "playCount": 0, "fav": false}, {"id": "s36", "title": "Rolling in the deep", "artist": "Adele", "key": "", "tagIds": ["t4", "t9"], "score": null, "playCount": 0, "fav": false}, {"id": "s37", "title": "Someone like you", "artist": "Adele", "key": "", "tagIds": ["t4", "t9"], "score": null, "playCount": 0, "fav": false}, {"id": "s38", "title": "Step up", "artist": "카라", "key": "", "tagIds": ["t3", "t8"], "score": null, "playCount": 0, "fav": false}, {"id": "s39", "title": "Sunkiss", "artist": "웬디", "key": "", "tagIds": ["t1", "t7"], "score": 96, "playCount": 2, "fav": false}, {"id": "s40", "title": "Take a bow", "artist": "Rihanna", "key": "", "tagIds": ["t4", "t9"], "score": null, "playCount": 0, "fav": false}, {"id": "s41", "title": "U & I", "artist": "에일리", "key": "", "tagIds": ["t1", "t7"], "score": 97, "playCount": 0, "fav": false}, {"id": "s42", "title": "U R", "artist": "태연", "key": "", "tagIds": ["t1", "t7"], "score": 97, "playCount": 1, "fav": false}, {"id": "s43", "title": "Unforgiven", "artist": "르세라핌", "key": "", "tagIds": ["t3", "t8"], "score": null, "playCount": 0, "fav": false}, {"id": "s44", "title": "When this rain stop", "artist": "웬디", "key": "", "tagIds": ["t2", "t7"], "score": 96, "playCount": 2, "fav": false}, {"id": "s45", "title": "거짓말 거짓말 거짓말", "artist": "이적", "key": "+8 F", "tagIds": ["t4", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s46", "title": "고민중독", "artist": "QWER", "key": "", "tagIds": ["t3", "t8"], "score": null, "playCount": 0, "fav": false}, {"id": "s47", "title": "꿈에", "artist": "박정현", "key": "", "tagIds": ["t2", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s48", "title": "나 가거든", "artist": "박정현", "key": "", "tagIds": ["t2", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s49", "title": "나에게로의 초대", "artist": "박기영, 조유진", "key": "", "tagIds": ["t2", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s50", "title": "남자 때문에", "artist": "Joo", "key": "", "tagIds": ["t8", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s51", "title": "낭만고양이", "artist": "체리필터", "key": "", "tagIds": ["t3", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s52", "title": "내 생에 아름다운", "artist": "이예준", "key": "", "tagIds": ["t2", "t7"], "score": 93, "playCount": 0, "fav": false}, {"id": "s53", "title": "내 손을 잡아", "artist": "아이유", "key": "", "tagIds": ["t3", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s54", "title": "내생에 아름다운", "artist": "케이윌", "key": "", "tagIds": ["t4", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s55", "title": "너랑나", "artist": "아이유", "key": "", "tagIds": ["t3", "t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s56", "title": "널 사랑하지 않아", "artist": "어반자파카", "key": "", "tagIds": ["t7", "t11"], "score": null, "playCount": 0, "fav": false}, {"id": "s57", "title": "눈의 꽃", "artist": "이해리", "key": "-1", "tagIds": ["t2", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s58", "title": "덤디덤디", "artist": "여자아이들", "key": "", "tagIds": ["t3", "t8"], "score": null, "playCount": 0, "fav": false}, {"id": "s59", "title": "마음", "artist": "아이유", "key": "", "tagIds": ["t4", "t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s60", "title": "말리꽃", "artist": "이승철", "key": "여+2 Db", "tagIds": ["t2", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s61", "title": "멸종위기사랑", "artist": "이찬혁", "key": "여", "tagIds": ["t2", "t7"], "score": 95, "playCount": 0, "fav": false}, {"id": "s62", "title": "문득", "artist": "에일리", "key": "", "tagIds": ["t1", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s63", "title": "바람기억", "artist": "나얼", "key": "여-2", "tagIds": ["t2", "t7"], "score": 85, "playCount": 0, "fav": false}, {"id": "s64", "title": "바람이 분다", "artist": "한동근, 최효인", "key": "", "tagIds": ["t7", "t11"], "score": null, "playCount": 0, "fav": false}, {"id": "s65", "title": "별의 하모니", "artist": "QWER", "key": "", "tagIds": ["t1", "t8"], "score": 96, "playCount": 0, "fav": false}, {"id": "s66", "title": "불장난", "artist": "블랙핑크", "key": "", "tagIds": ["t3", "t8"], "score": null, "playCount": 0, "fav": false}, {"id": "s67", "title": "불티", "artist": "태연", "key": "", "tagIds": ["t1", "t7"], "score": 95, "playCount": 0, "fav": false}, {"id": "s68", "title": "비밀번호 486", "artist": "윤하", "key": "", "tagIds": ["t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s69", "title": "비밀의 화원", "artist": "아이유", "key": "", "tagIds": ["t4", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s70", "title": "빗소리가 들리면", "artist": "김세정", "key": "", "tagIds": ["t1", "t7"], "score": 96, "playCount": 0, "fav": false}, {"id": "s71", "title": "사랑보다 깊은 상처", "artist": "박정현, 임재범", "key": "", "tagIds": ["t7", "t11"], "score": null, "playCount": 0, "fav": false}, {"id": "s72", "title": "사랑이었다", "artist": "지코(루나)", "key": "", "tagIds": ["t1", "t7"], "score": 95, "playCount": 0, "fav": false}, {"id": "s73", "title": "새벽 가로수길", "artist": "백지영, 스무살", "key": "", "tagIds": ["t7", "t11"], "score": null, "playCount": 0, "fav": false}, {"id": "s74", "title": "소나기", "artist": "아이오아이", "key": "", "tagIds": ["t8", "t10"], "score": 94, "playCount": 0, "fav": false}, {"id": "s75", "title": "숨", "artist": "박효신", "key": "여", "tagIds": ["t1", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s76", "title": "숲의 아이", "artist": "유아", "key": "", "tagIds": ["t1", "t8"], "score": 94, "playCount": 0, "fav": false}, {"id": "s77", "title": "스물다섯, 스물하나", "artist": "한동근, 최효인", "key": "", "tagIds": ["t7", "t11"], "score": null, "playCount": 0, "fav": false}, {"id": "s78", "title": "아이와 나의 바다", "artist": "아이유", "key": "", "tagIds": ["t1", "t7"], "score": 92, "playCount": 0, "fav": false}, {"id": "s79", "title": "안녕", "artist": "조이", "key": "", "tagIds": ["t3", "t8"], "score": 97, "playCount": 0, "fav": false}, {"id": "s80", "title": "안녕이라고 말하지마", "artist": "다비치", "key": "", "tagIds": ["t3", "t7"], "score": 99, "playCount": 0, "fav": false}, {"id": "s81", "title": "안아줘", "artist": "정준일", "key": "여+6 A", "tagIds": ["t2", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s82", "title": "야생화", "artist": "박효신", "key": "여", "tagIds": ["t2", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s83", "title": "어떻게 이별까지 사랑하겠어, 널 사랑하는거지", "artist": "악뮤", "key": "", "tagIds": ["t1", "t7"], "score": 96, "playCount": 1, "fav": false}, {"id": "s84", "title": "어른아이", "artist": "거미", "key": "", "tagIds": ["t1", "t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s85", "title": "에잇", "artist": "아이유", "key": "", "tagIds": ["t4", "t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s86", "title": "여인의 향기", "artist": "에일리", "key": "", "tagIds": ["t3", "t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s87", "title": "여행", "artist": "볼빨간 사춘기", "key": "", "tagIds": ["t1", "t3", "t7"], "score": 93, "playCount": 1, "fav": false}, {"id": "s88", "title": "연", "artist": "빅마마", "key": "", "tagIds": ["t2", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s89", "title": "열애중", "artist": "벤", "key": "", "tagIds": ["t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s90", "title": "오래된노래", "artist": "스탠딩에그", "key": "+4", "tagIds": ["t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s91", "title": "오르트구름", "artist": "윤하", "key": "", "tagIds": ["t3", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s92", "title": "우리 왜 헤어져야 해", "artist": "신예영", "key": "", "tagIds": ["t2", "t7"], "score": 98, "playCount": 0, "fav": false}, {"id": "s93", "title": "우린 남이 될 수 있을까", "artist": "안지영, 스무살", "key": "", "tagIds": ["t7", "t11"], "score": null, "playCount": 0, "fav": false}, {"id": "s94", "title": "이름에게", "artist": "아이유", "key": "", "tagIds": ["t1", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s95", "title": "인사", "artist": "태연", "key": "", "tagIds": ["t1", "t7"], "score": 93, "playCount": 2, "fav": false}, {"id": "s96", "title": "잊지 말아요", "artist": "백지영", "key": "", "tagIds": ["t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s97", "title": "잔소리", "artist": "아이유, 임슬옹", "key": "", "tagIds": ["t7", "t8", "t11"], "score": null, "playCount": 0, "fav": false}, {"id": "s98", "title": "잘부탁드립니다", "artist": "익스", "key": "", "tagIds": ["t3", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s99", "title": "저녁하늘", "artist": "에일리", "key": "", "tagIds": ["t1", "t4", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s100", "title": "좋아", "artist": "민서", "key": "", "tagIds": ["t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s101", "title": "좋은날", "artist": "멜로망스", "key": "+4", "tagIds": ["t1", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s102", "title": "지우개", "artist": "알리", "key": "", "tagIds": ["t4", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s103", "title": "짧은머리", "artist": "정은지, 허각", "key": "", "tagIds": ["t7", "t8", "t11"], "score": null, "playCount": 0, "fav": false}, {"id": "s104", "title": "처음이라서", "artist": "정효빈", "key": "", "tagIds": ["t1", "t7"], "score": 95, "playCount": 0, "fav": false}, {"id": "s105", "title": "첫눈처럼 너에게 가겠다", "artist": "에일리", "key": "", "tagIds": ["t1", "t7"], "score": 97, "playCount": 0, "fav": false}, {"id": "s106", "title": "체념", "artist": "빅마마", "key": "", "tagIds": ["t1", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s107", "title": "총맞은것처럼", "artist": "백지영", "key": "", "tagIds": ["t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s108", "title": "태양계", "artist": "성시경", "key": "+4", "tagIds": ["t4", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s109", "title": "텔레파시", "artist": "윤하", "key": "", "tagIds": ["t3", "t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s110", "title": "항해", "artist": "김세정", "key": "", "tagIds": ["t1", "t8"], "score": 94, "playCount": 0, "fav": false}, {"id": "s111", "title": "행복", "artist": "레드벨벳", "key": "", "tagIds": ["t3", "t8"], "score": 97, "playCount": 0, "fav": false}, {"id": "s112", "title": "헤어지자 말해요", "artist": "박재정", "key": "여+1", "tagIds": ["t2", "t7"], "score": 97, "playCount": 0, "fav": false}, {"id": "s113", "title": "호랑수월가", "artist": "탑현", "key": "", "tagIds": ["t4", "t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s114", "title": "홀로", "artist": "정키", "key": "", "tagIds": ["t2", "t4", "t7"], "score": null, "playCount": 0, "fav": false}];
+
+  let songs = [];
+  let tags = [];
+  let activeTagFilters = new Set();
+  let favOnly = false;
+  let searchQuery = '';
+  let nickname = '';
+  let sortMode = 'alpha';
+  let editingSongId = null;
+  let selectedTagIdsInModal = new Set();
+
+  const $ = (sel) => document.querySelector(sel);
+  const el = (tag, cls) => { const e = document.createElement(tag); if (cls) e.className = cls; return e; };
+
+  function showToast(msg) {
+    const t = $('#toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(showToast._timer);
+    showToast._timer = setTimeout(() => t.classList.remove('show'), 1800);
+  }
+
+  function uid() {
+    return 's' + Date.now() + Math.floor(Math.random()*1000);
+  }
+
+  // ---------- Storage (browser localStorage: works fully offline, no Claude needed) ----------
+  function loadData() {
+    try {
+      const s = localStorage.getItem(SONGS_KEY);
+      songs = s ? JSON.parse(s) : null;
+    } catch (e) {
+      songs = null;
+    }
+    let storedSeedVersion = null;
+    try { storedSeedVersion = localStorage.getItem(SEED_VERSION_KEY); } catch (e) {}
+
+    // 새 시드(엑셀 기준 목록)가 배포되면 한 번 강제로 목록을 갱신한다
+    if (songs === null || storedSeedVersion !== SEED_VERSION) {
+      songs = JSON.parse(JSON.stringify(DEFAULT_SONGS));
+      saveSongs();
+      try { localStorage.setItem(SEED_VERSION_KEY, SEED_VERSION); } catch (e) {}
+    }
+    // 예전 데이터 호환: 없는 필드 채우기
+    songs.forEach(s => {
+      if (typeof s.fav !== 'boolean') s.fav = false;
+      if (typeof s.playCount !== 'number') s.playCount = 0;
+      if (s.score === undefined) s.score = null;
+      if (!Array.isArray(s.tagIds)) s.tagIds = [];
+    });
+
+    try { nickname = localStorage.getItem(NICKNAME_KEY) || ''; } catch (e) { nickname = ''; }
+
+    let tagVersion = null;
+    try {
+      tags = JSON.parse(localStorage.getItem(TAGS_KEY) || 'null');
+      tagVersion = localStorage.getItem(TAG_VERSION_KEY);
+    } catch (e) {
+      tags = null;
+      tagVersion = null;
+    }
+    if (!tags || tagVersion !== TAG_SCHEMA_VERSION) {
+      tags = DEFAULT_TAGS.slice();
+      saveTags();
+      try { localStorage.setItem(TAG_VERSION_KEY, TAG_SCHEMA_VERSION); } catch (e) {}
+    }
+    // 마이그레이션: 기존 저장 데이터의 태그 이름 '연습' → '연습중' (사용자 커스텀 태그는 보존)
+    const legacyTag = tags.find(t => t.id === 't6' && t.name === '연습');
+    if (legacyTag) { legacyTag.name = '연습중'; saveTags(); }
+    render();
+  }
+
+  function saveSongs() {
+    try {
+      localStorage.setItem(SONGS_KEY, JSON.stringify(songs));
+    } catch (e) {
+      showToast('저장에 실패했어요. 저장 공간이 가득 찼을 수 있어요.');
+    }
+  }
+
+  function saveTags() {
+    try {
+      localStorage.setItem(TAGS_KEY, JSON.stringify(tags));
+    } catch (e) {
+      showToast('태그 저장에 실패했어요.');
+    }
+  }
+
+  function saveNickname() {
+    try {
+      localStorage.setItem(NICKNAME_KEY, nickname);
+    } catch (e) {}
+  }
+
+  // 태그는 항상 설정된 태그 순서대로 정렬해서 저장/표시한다
+  function sortTagIds(ids) {
+    const order = {};
+    tags.forEach((t, i) => { order[t.id] = i; });
+    return Array.from(new Set(ids)).sort((a, b) => {
+      const oa = (a in order) ? order[a] : 9999;
+      const ob = (b in order) ? order[b] : 9999;
+      return oa - ob;
+    });
+  }
+
+  // ---------- Korean sorting helper ----------
+  const CHO_LIST = ['ㄱ','ㄲ','ㄴ','ㄷ','ㄸ','ㄹ','ㅁ','ㅂ','ㅃ','ㅅ','ㅆ','ㅇ','ㅈ','ㅉ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
+  function getChosung(str) {
+    if (!str) return '#';
+    const code = str.charCodeAt(0) - 0xAC00;
+    if (code < 0 || code > 11171) return '#';
+    return CHO_LIST[Math.floor(code / (21*28))];
+  }
+  // 정렬/그룹 우선순위: 숫자 -> 영어 -> 한글
+  function getScriptGroup(title) {
+    const ch = (title || '').trim().charAt(0);
+    if (/[0-9]/.test(ch)) return 0;
+    if (/[A-Za-z]/.test(ch)) return 1;
+    return 2;
+  }
+  function getGroupLabel(title) {
+    const ch = (title || '').trim().charAt(0);
+    if (/[0-9]/.test(ch)) return '#';
+    if (/[A-Za-z]/.test(ch)) return ch.toUpperCase();
+    return getChosung(title);
+  }
+
+  function scoreColor(score) {
+    if (score === null || score === undefined || isNaN(score)) return 'var(--text-faint)';
+    if (score >= 95) return 'var(--score-high)';
+    if (score >= 90) return 'var(--score-mid-high)';
+    if (score >= 85) return 'var(--score-mid)';
+    return 'var(--score-low)';
+  }
+
+  // ---------- Filter row ----------
+  function renderFilterRow() {
+    const row = $('#filterRow');
+    row.innerHTML = '';
+    const allChip = el('button', 'chip all' + (activeTagFilters.size === 0 ? ' active' : ''));
+    allChip.textContent = '전체';
+    allChip.onclick = () => { activeTagFilters.clear(); render(); };
+    row.appendChild(allChip);
+
+    const favChip = el('button', 'chip' + (favOnly ? ' active' : ''));
+    favChip.style.setProperty('--chip-color', 'var(--accent-magenta)');
+    favChip.textContent = favOnly ? '♥' : '♡';
+    favChip.title = '하트 표시한 곡만 보기';
+    favChip.onclick = () => { favOnly = !favOnly; render(); };
+    row.appendChild(favChip);
+
+    tags.forEach(tag => {
+      const chip = el('button', 'chip' + (activeTagFilters.has(tag.id) ? ' active' : '') + (tag.lowFreq ? ' chip-subtle' : ''));
+      chip.style.setProperty('--chip-color', tag.color);
+      const dot = el('span', 'dot');
+      chip.appendChild(dot);
+      chip.appendChild(document.createTextNode(tag.name));
+      chip.onclick = () => {
+        if (activeTagFilters.has(tag.id)) activeTagFilters.delete(tag.id);
+        else activeTagFilters.add(tag.id);
+        render();
+      };
+      row.appendChild(chip);
+    });
+  }
+
+  // ---------- Sort tabs ----------
+  function renderSortTabs() {
+    document.querySelectorAll('.sort-tab').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.sort === sortMode);
+      btn.onclick = () => { sortMode = btn.dataset.sort; render(); };
+    });
+  }
+
+  // ---------- Song list ----------
+  function getFilteredSortedSongs() {
+    let list = songs.slice();
+
+    const q = searchQuery.trim().toLowerCase();
+    if (q) {
+      // 검색 중에는 태그 필터/저빈도 숨김과 무관하게 전체 목록에서 찾는다
+      list = list.filter(s => {
+        const tagNames = s.tagIds.map(id => { const t = tagById(id); return t ? t.name : ''; }).join(' ');
+        const haystack = `${s.title} ${s.artist} ${s.key} ${tagNames}`.toLowerCase();
+        return haystack.includes(q);
+      });
+      if (favOnly) list = list.filter(s => s.fav);
+      return sortSongList(list);
+    }
+
+    if (activeTagFilters.size > 0) {
+      list = list.filter(s => s.tagIds.some(id => activeTagFilters.has(id)));
+    } else {
+      // 전체 보기일 때는 저빈도 태그(가끔/듀엣 등 lowFreq로 표시된 태그)가 붙은 곡을 기본적으로 숨김
+      const lowFreqTagIds = new Set(tags.filter(t => t.lowFreq).map(t => t.id));
+      list = list.filter(s => !s.tagIds.some(id => lowFreqTagIds.has(id)));
+    }
+    if (favOnly) list = list.filter(s => s.fav);
+    return sortSongList(list);
+  }
+
+  function sortSongList(list) {
+    if (sortMode === 'alpha') {
+      list.sort((a,b) => {
+        const ga = getScriptGroup(a.title), gb = getScriptGroup(b.title);
+        if (ga !== gb) return ga - gb;
+        return a.title.localeCompare(b.title, 'ko');
+      });
+    } else if (sortMode === 'scoreDesc') {
+      list.sort((a,b) => {
+        const av = (a.score === null || a.score === undefined) ? null : a.score;
+        const bv = (b.score === null || b.score === undefined) ? null : b.score;
+        if (av === null && bv === null) return 0;
+        if (av === null) return 1;
+        if (bv === null) return -1;
+        return bv - av;
+      });
+    } else if (sortMode === 'scoreAsc') {
+      list.sort((a,b) => {
+        const av = (a.score === null || a.score === undefined) ? null : a.score;
+        const bv = (b.score === null || b.score === undefined) ? null : b.score;
+        if (av === null && bv === null) return 0;
+        if (av === null) return 1;
+        if (bv === null) return -1;
+        return av - bv;
+      });
+    } else if (sortMode === 'playDesc') {
+      list.sort((a,b) => (b.playCount||0) - (a.playCount||0));
+    }
+    return list;
+  }
+
+  function tagById(id) { return tags.find(t => t.id === id); }
+
+  function renderSongCard(song) {
+    const card = el('div', 'song-card');
+    card.onclick = () => openQuickEdit(song);
+
+    const heartBtn = el('button', 'heart-btn' + (song.fav ? ' on' : ''));
+    heartBtn.textContent = song.fav ? '♥' : '♡';
+    heartBtn.title = song.fav ? '하트 해제' : '하트 표시';
+    heartBtn.onclick = (e) => {
+      e.stopPropagation();
+      song.fav = !song.fav;
+      saveSongs();
+      render();
+    };
+
+    const main = el('div', 'song-main');
+    const title = el('p', 'song-title');
+    title.textContent = song.title;
+    const sub = el('p', 'song-sub');
+    sub.innerHTML = `${escapeHtml(song.artist || '가수 미상')}${song.key ? ' · <span class="key">' + escapeHtml(song.key) + '</span>' : ''}`;
+    const tagWrap = el('div', 'song-tags');
+    sortTagIds(song.tagIds).forEach(tid => {
+      const tag = tagById(tid);
+      if (!tag) return;
+      const pill = el('span', 'tag-pill');
+      pill.style.setProperty('--pill-color', tag.color);
+      pill.textContent = tag.name;
+      tagWrap.appendChild(pill);
+    });
+
+    main.appendChild(title);
+    main.appendChild(sub);
+    main.appendChild(tagWrap);
+
+    const scoreCol = el('div', 'score-col');
+    const led = el('div', 'score-led');
+    const hasScore = song.score !== null && song.score !== undefined;
+    led.style.color = scoreColor(song.score);
+    led.style.boxShadow = hasScore ? `0 0 14px ${scoreColor(song.score)}` : 'none';
+    led.textContent = hasScore ? song.score : '−';
+    const playBadge = el('div', 'play-badge');
+    playBadge.textContent = (song.playCount || 0) + '회';
+    scoreCol.appendChild(led);
+    scoreCol.appendChild(playBadge);
+
+    card.appendChild(heartBtn);
+    card.appendChild(main);
+    card.appendChild(scoreCol);
+    return card;
+  }
+
+  function escapeHtml(str) {
+    const d = document.createElement('div');
+    d.textContent = str;
+    return d.innerHTML;
+  }
+
+  function renderList() {
+    const wrap = $('#listWrap');
+    wrap.innerHTML = '';
+    const list = getFilteredSortedSongs();
+
+    if (songs.length === 0) {
+      const empty = el('div', 'empty-state');
+      empty.innerHTML = `<div class="emoji">🎤</div><div class="msg1">아직 등록된 노래가 없어요</div><div class="msg2">오른쪽 아래 + 버튼으로 첫 애창곡을 추가해보세요</div>`;
+      wrap.appendChild(empty);
+      return;
+    }
+    if (list.length === 0) {
+      const empty = el('div', 'empty-state');
+      const msg2 = searchQuery.trim()
+        ? '다른 검색어로 찾아보세요'
+        : (favOnly ? '하트 표시한 곡이 아직 없어요' : '다른 태그를 선택해보세요');
+      empty.innerHTML = `<div class="emoji">🔍</div><div class="msg1">조건에 맞는 노래가 없어요</div><div class="msg2">${msg2}</div>`;
+      wrap.appendChild(empty);
+      return;
+    }
+
+    list.forEach(song => wrap.appendChild(renderSongCard(song)));
+  }
+
+  function updateHeader() {
+    $('#titleText').textContent = nickname ? `${nickname} 애창곡` : '내 애창곡';
+    const shown = getFilteredSortedSongs().length;
+    $('#songCount').textContent = (shown === songs.length)
+      ? `${songs.length}곡`
+      : `${shown} / ${songs.length}곡`;
+  }
+
+  function updateSearchUI() {
+    $('#searchClearBtn').style.display = searchQuery ? 'block' : 'none';
+  }
+
+  function render() {
+    renderFilterRow();
+    renderSortTabs();
+    renderList();
+    updateHeader();
+    updateSearchUI();
+  }
+
+  // ---------- Song Modal ----------
+  function renderTagSelectWrap() {
+    const wrap = $('#tagSelectWrap');
+    wrap.innerHTML = '';
+    tags.forEach(tag => {
+      const chip = el('span', 'tag-check' + (selectedTagIdsInModal.has(tag.id) ? ' checked' : ''));
+      chip.style.setProperty('--chk-color', tag.color);
+      chip.textContent = tag.name;
+      chip.onclick = () => {
+        if (selectedTagIdsInModal.has(tag.id)) selectedTagIdsInModal.delete(tag.id);
+        else selectedTagIdsInModal.add(tag.id);
+        renderTagSelectWrap();
+      };
+      wrap.appendChild(chip);
+    });
+  }
+
+  function setScoreRowUnset(rowEl, toggleBtn, unset) {
+    rowEl.classList.toggle('is-unset', unset);
+    toggleBtn.textContent = unset ? '점수 입력하기' : '점수 없음으로 표시';
+  }
+
+  function openSongModal(song) {
+    editingSongId = song ? song.id : null;
+    $('#songModalTitle').textContent = song ? '상세수정' : '노래 추가';
+    $('#inputTitle').value = song ? song.title : '';
+    $('#inputArtist').value = song ? song.artist : '';
+    $('#inputKey').value = song ? song.key : '';
+    const hasScore = song && song.score !== null && song.score !== undefined;
+    $('#inputScoreRange').value = hasScore ? song.score : 90;
+    $('#scoreNumDisplay').textContent = hasScore ? song.score : 90;
+    $('#scoreNumDisplay').style.color = scoreColor(hasScore ? song.score : 90);
+    setScoreRowUnset($('#scoreFieldRow'), $('#scoreToggleBtn'), song ? !hasScore : false);
+    selectedTagIdsInModal = new Set(song ? song.tagIds : []);
+    $('#deleteSongBtn').style.display = song ? 'block' : 'none';
+    renderTagSelectWrap();
+    $('#songModalBackdrop').classList.add('open');
+  }
+
+  function closeSongModal() {
+    $('#songModalBackdrop').classList.remove('open');
+    editingSongId = null;
+  }
+
+  async function handleSaveSong() {
+    const title = $('#inputTitle').value.trim();
+    const artist = $('#inputArtist').value.trim();
+    const key = $('#inputKey').value.trim();
+    const scoreUnset = $('#scoreFieldRow').classList.contains('is-unset');
+    const score = scoreUnset ? null : parseInt($('#inputScoreRange').value, 10);
+
+    if (!title) {
+      showToast('제목을 입력해주세요');
+      return;
+    }
+
+    if (editingSongId) {
+      const song = songs.find(s => s.id === editingSongId);
+      song.title = title;
+      song.artist = artist;
+      song.key = key;
+      song.score = score;
+      song.tagIds = sortTagIds(Array.from(selectedTagIdsInModal));
+    } else {
+      songs.push({
+        id: uid(),
+        title, artist, key, score,
+        tagIds: sortTagIds(Array.from(selectedTagIdsInModal)),
+        playCount: 0,
+        fav: false
+      });
+    }
+    await saveSongs();
+    closeSongModal();
+    render();
+    showToast('저장했어요');
+  }
+
+  async function handleDeleteSong() {
+    if (!editingSongId) return;
+    songs = songs.filter(s => s.id !== editingSongId);
+    await saveSongs();
+    closeSongModal();
+    render();
+    showToast('삭제했어요');
+  }
+
+  // ---------- Quick Edit Modal (부른 횟수 / 점수 / 태그) ----------
+  let qeSongId = null;
+  let qeCount = 0;
+  let qeSelectedTagIds = new Set();
+
+  function renderQeTagSelectWrap() {
+    const wrap = $('#qeTagSelectWrap');
+    wrap.innerHTML = '';
+    tags.forEach(tag => {
+      const chip = el('span', 'tag-check' + (qeSelectedTagIds.has(tag.id) ? ' checked' : ''));
+      chip.style.setProperty('--chk-color', tag.color);
+      chip.textContent = tag.name;
+      chip.onclick = () => {
+        if (qeSelectedTagIds.has(tag.id)) qeSelectedTagIds.delete(tag.id);
+        else qeSelectedTagIds.add(tag.id);
+        renderQeTagSelectWrap();
+      };
+      wrap.appendChild(chip);
+    });
+  }
+
+  function openQuickEdit(song) {
+    qeSongId = song.id;
+    qeCount = song.playCount || 0;
+    $('#quickEditTitle').textContent = song.title;
+    $('#qeCountDisplay').textContent = qeCount;
+    const hasScore = song.score !== null && song.score !== undefined;
+    $('#qeScoreRange').value = hasScore ? song.score : 90;
+    $('#qeScoreDisplay').textContent = hasScore ? song.score : 90;
+    $('#qeScoreDisplay').style.color = scoreColor(hasScore ? song.score : 90);
+    setScoreRowUnset($('#qeScoreFieldRow'), $('#qeScoreToggleBtn'), !hasScore);
+    qeSelectedTagIds = new Set(song.tagIds);
+    renderQeTagSelectWrap();
+    $('#quickEditBackdrop').classList.add('open');
+  }
+
+  function closeQuickEdit() {
+    $('#quickEditBackdrop').classList.remove('open');
+    qeSongId = null;
+  }
+
+  async function handleQuickSave() {
+    const song = songs.find(s => s.id === qeSongId);
+    if (!song) { closeQuickEdit(); return; }
+    const scoreUnset = $('#qeScoreFieldRow').classList.contains('is-unset');
+    song.playCount = qeCount;
+    song.score = scoreUnset ? null : parseInt($('#qeScoreRange').value, 10);
+    song.tagIds = sortTagIds(Array.from(qeSelectedTagIds));
+    await saveSongs();
+    closeQuickEdit();
+    render();
+    showToast('저장했어요');
+  }
+
+  // ---------- Tag Manager Modal ----------
+  function renderTagManageList() {
+    const wrap = $('#tagManageList');
+    wrap.innerHTML = '';
+    tags.forEach(tag => {
+      const row = el('div', 'tag-manage-row');
+      const dot = el('span', 'color-dot');
+      dot.style.setProperty('--dot-color', tag.color);
+      const input = el('input', 'field-input');
+      input.value = tag.name;
+      input.style.flex = '1';
+      input.onchange = async () => {
+        tag.name = input.value.trim() || tag.name;
+        await saveTags();
+        render();
+      };
+      const lowFreqBtn = el('button', 'icon-btn');
+      lowFreqBtn.textContent = tag.lowFreq ? '🔉' : '🔊';
+      lowFreqBtn.title = tag.lowFreq ? '가끔 사용하는 태그 (눌러서 해제)' : '자주 쓰는 태그 (눌러서 "가끔 사용"으로 표시)';
+      lowFreqBtn.style.opacity = tag.lowFreq ? '0.6' : '1';
+      lowFreqBtn.onclick = async () => {
+        tag.lowFreq = !tag.lowFreq;
+        await saveTags();
+        renderTagManageList();
+        render();
+      };
+      const removeBtn = el('button', 'icon-btn remove');
+      removeBtn.textContent = '✕';
+      removeBtn.title = '태그 삭제';
+      removeBtn.onclick = async () => {
+        const inUse = songs.some(s => s.tagIds.includes(tag.id));
+        if (inUse && !confirm(`"${tag.name}" 태그가 붙은 노래가 있어요. 그래도 삭제할까요?`)) return;
+        tags = tags.filter(t => t.id !== tag.id);
+        songs.forEach(s => { s.tagIds = s.tagIds.filter(id => id !== tag.id); });
+        await saveTags();
+        await saveSongs();
+        renderTagManageList();
+        render();
+      };
+      row.appendChild(dot);
+      row.appendChild(input);
+      row.appendChild(lowFreqBtn);
+      row.appendChild(removeBtn);
+      wrap.appendChild(row);
+    });
+  }
+
+  let newTagColor = PALETTE[0];
+  function renderNewTagSwatches() {
+    const wrap = $('#newTagSwatches');
+    wrap.innerHTML = '';
+    PALETTE.forEach(color => {
+      const sw = el('span', 'swatch' + (color === newTagColor ? ' selected' : ''));
+      sw.style.background = color;
+      sw.onclick = () => { newTagColor = color; renderNewTagSwatches(); };
+      wrap.appendChild(sw);
+    });
+  }
+
+  async function handleAddTag() {
+    const name = $('#newTagName').value.trim();
+    if (!name) {
+      showToast('태그 이름을 입력해주세요');
+      return;
+    }
+    const lowFreq = $('#newTagLowFreq').checked;
+    tags.push({ id: uid(), name, color: newTagColor, lowFreq });
+    await saveTags();
+    $('#newTagName').value = '';
+    $('#newTagLowFreq').checked = false;
+    renderTagManageList();
+    render();
+    showToast('태그를 추가했어요');
+  }
+
+  // ---------- Excel export / import ----------
+  function handleExportExcel() {
+    if (songs.length === 0) {
+      showToast('내보낼 노래가 없어요');
+      return;
+    }
+    const rows = songs.map(s => ({
+      '제목': s.title,
+      '가수': s.artist,
+      '키 변화': s.key,
+      '태그': sortTagIds(s.tagIds).map(id => { const t = tagById(id); return t ? t.name : null; }).filter(Boolean).join(', '),
+      '점수': (s.score === null || s.score === undefined) ? '' : s.score,
+      '부른 횟수': s.playCount || 0,
+      '하트': s.fav ? 'O' : ''
+    }));
+    const ws = XLSX.utils.json_to_sheet(rows, { header: ['제목','가수','키 변화','태그','점수','부른 횟수','하트'] });
+    ws['!cols'] = [{wch:20},{wch:14},{wch:14},{wch:24},{wch:8},{wch:10},{wch:6}];
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, '내 애창곡');
+    XLSX.writeFile(wb, '내_애창곡_리스트.xlsx');
+    showToast('엑셀 파일을 내려받았어요');
+  }
+
+  function splitTagNames(raw) {
+    return String(raw || '')
+      .split(/[,\/·、;]+/)
+      .map(t => t.trim())
+      .filter(Boolean);
+  }
+
+  function getOrCreateTag(name) {
+    let tag = tags.find(t => t.name === name);
+    if (!tag) {
+      tag = { id: uid(), name, color: PALETTE[tags.length % PALETTE.length] };
+      tags.push(tag);
+    }
+    return tag;
+  }
+
+  async function handleImportFile(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = async (evt) => {
+      try {
+        const data = new Uint8Array(evt.target.result);
+        const wb = XLSX.read(data, { type: 'array' });
+        const firstSheet = wb.Sheets[wb.SheetNames[0]];
+        const rows = XLSX.utils.sheet_to_json(firstSheet, { defval: '' });
+
+        if (!rows.length) {
+          showToast('시트에서 데이터를 찾지 못했어요');
+          return;
+        }
+
+        const newSongs = [];
+        rows.forEach(row => {
+          const title = String(row['제목'] ?? row['title'] ?? row['Title'] ?? '').trim();
+          if (!title) return;
+          const artist = String(row['가수'] ?? row['artist'] ?? row['Artist'] ?? '').trim();
+          const key = String(row['키 변화'] ?? row['키'] ?? row['key'] ?? '').trim();
+          const scoreRaw = row['점수'] ?? row['score'] ?? row['Score'];
+          const parsedScore = parseInt(scoreRaw, 10);
+          const score = !isNaN(parsedScore) ? Math.min(100, Math.max(0, parsedScore)) : null;
+          const tagNames = splitTagNames(row['태그'] ?? row['tags'] ?? row['Tags'] ?? '');
+          const tagIds = sortTagIds(tagNames.map(name => getOrCreateTag(name).id));
+          const playCountRaw = row['부른 횟수'] ?? row['부른횟수'] ?? row['playCount'] ?? row['Play Count'];
+          const parsedPlayCount = parseInt(playCountRaw, 10);
+          const playCount = !isNaN(parsedPlayCount) && parsedPlayCount >= 0 ? parsedPlayCount : 0;
+          const favRaw = String(row['하트'] ?? row['좋아요'] ?? row['fav'] ?? row['Favorite'] ?? '').trim().toLowerCase();
+          const fav = ['o','O','y','yes','true','1','v','♥','y'].includes(favRaw);
+
+          newSongs.push({ id: uid(), title, artist, key, score, tagIds, playCount, fav });
+        });
+
+        if (newSongs.length === 0) {
+          showToast('가져올 수 있는 곡이 없어요. "제목" 열이 있는지 확인해주세요');
+          return;
+        }
+
+        const confirmed = confirm(`현재 목록 ${songs.length}곡을 지우고, 엑셀의 ${newSongs.length}곡으로 전체 교체할까요?`);
+        if (!confirmed) {
+          return;
+        }
+
+        songs = newSongs;
+        await saveTags();
+        await saveSongs();
+        render();
+        showToast(`${newSongs.length}곡으로 전체 교체했어요`);
+      } catch (err) {
+        showToast('파일을 읽지 못했어요. 형식을 확인해주세요');
+      } finally {
+        e.target.value = '';
+      }
+    };
+    reader.onerror = () => showToast('파일을 읽지 못했어요');
+    reader.readAsArrayBuffer(file);
+  }
+
+  // ---------- Event bindings ----------
+  $('#exportBtn').onclick = handleExportExcel;
+  $('#importBtn').onclick = () => $('#importFileInput').click();
+  $('#importFileInput').onchange = handleImportFile;
+
+  $('#addBtn').onclick = () => openSongModal(null);
+  $('#cancelSongBtn').onclick = closeSongModal;
+  $('#saveSongBtn').onclick = handleSaveSong;
+  $('#deleteSongBtn').onclick = handleDeleteSong;
+  $('#songModalBackdrop').onclick = (e) => { if (e.target.id === 'songModalBackdrop') closeSongModal(); };
+
+  $('#inputScoreRange').oninput = (e) => {
+    $('#scoreNumDisplay').textContent = e.target.value;
+    $('#scoreNumDisplay').style.color = scoreColor(parseInt(e.target.value,10));
+  };
+  $('#scoreToggleBtn').onclick = () => {
+    const nowUnset = !$('#scoreFieldRow').classList.contains('is-unset');
+    setScoreRowUnset($('#scoreFieldRow'), $('#scoreToggleBtn'), nowUnset);
+  };
+
+  $('#qeIncBtn').onclick = () => {
+    qeCount = qeCount + 1;
+    $('#qeCountDisplay').textContent = qeCount;
+  };
+  $('#qeDecBtn').onclick = () => {
+    qeCount = Math.max(0, qeCount - 1);
+    $('#qeCountDisplay').textContent = qeCount;
+  };
+  $('#qeScoreRange').oninput = (e) => {
+    $('#qeScoreDisplay').textContent = e.target.value;
+    $('#qeScoreDisplay').style.color = scoreColor(parseInt(e.target.value,10));
+  };
+  $('#qeScoreToggleBtn').onclick = () => {
+    const nowUnset = !$('#qeScoreFieldRow').classList.contains('is-unset');
+    setScoreRowUnset($('#qeScoreFieldRow'), $('#qeScoreToggleBtn'), nowUnset);
+  };
+  $('#qeSaveBtn').onclick = handleQuickSave;
+  $('#qeDetailBtn').onclick = () => {
+    const song = songs.find(s => s.id === qeSongId);
+    closeQuickEdit();
+    if (song) openSongModal(song);
+  };
+  $('#quickEditBackdrop').onclick = (e) => { if (e.target.id === 'quickEditBackdrop') closeQuickEdit(); };
+
+  $('#searchInput').oninput = (e) => {
+    searchQuery = e.target.value;
+    render();
+  };
+  $('#searchClearBtn').onclick = () => {
+    searchQuery = '';
+    $('#searchInput').value = '';
+    render();
+  };
+
+  $('#nicknameInput').oninput = (e) => {
+    nickname = e.target.value.trim();
+    saveNickname();
+    updateHeader();
+  };
+
+  $('#gearBtn').onclick = () => {
+    $('#nicknameInput').value = nickname;
+    renderTagManageList();
+    renderNewTagSwatches();
+    $('#tagModalBackdrop').classList.add('open');
+  };
+  $('#closeTagModalBtn').onclick = () => $('#tagModalBackdrop').classList.remove('open');
+  $('#tagModalBackdrop').onclick = (e) => { if (e.target.id === 'tagModalBackdrop') $('#tagModalBackdrop').classList.remove('open'); };
+  $('#addTagBtn').onclick = handleAddTag;
+
+  loadData();
+})();
+</script>
+<script>
+// PWA: 서비스 워커 등록 (https 호스팅 시 오프라인 지원 + 앱 설치 가능)
+if ('serviceWorker' in navigator && location.protocol === 'https:') {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(() => {});
+  });
+}
+</script>
+</body>
+</html>
