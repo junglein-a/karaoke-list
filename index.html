@@ -302,23 +302,35 @@
   .song-card:hover { background: var(--surface-hover); border-color: var(--accent-cyan); }
   .song-card:active { transform: scale(0.99); }
 
-  .heart-btn {
+  .card-side {
     flex: none;
     align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 24px;
+  }
+  .heart-btn, .practice-btn {
+    display: block;
     background: none;
     border: none;
-    padding: 2px 2px 2px 0;
-    width: 22px;
+    padding: 2px 0;
+    margin: 0;
+    width: 24px;
+    height: 22px;
     text-align: center;
-    font-size: 18px;
-    line-height: 1;
+    font-size: 17px;
+    line-height: 18px;
     cursor: pointer;
     color: var(--text-faint);
-    opacity: 0.55;
+    opacity: 0.45;
     transition: color 0.12s ease, opacity 0.12s ease;
   }
-  .heart-btn:active { opacity: 0.8; }
+  .heart-btn:active, .practice-btn:active { opacity: 0.75; }
   .heart-btn.on { color: var(--accent-magenta); opacity: 1; }
+  .practice-btn { font-size: 16px; }
+  .practice-btn.on { color: var(--accent-cyan); opacity: 1; }
 
   .song-main { flex: 1; min-width: 0; }
   .song-title {
@@ -800,7 +812,7 @@
   const TAG_VERSION_KEY = 'karaoke:tagsVersion';
   const NICKNAME_KEY = 'karaoke:nickname';
   const SEED_VERSION_KEY = 'karaoke:seedVersion';
-  const SEED_VERSION = '3';
+  const SEED_VERSION = '4';
 
   const PALETTE = ['#f4c542','#4fc3e8','#ff5c7a','#7ed6a5','#b48ef0','#e0965a','#ff8fd8','#6fd3ff','#a3e635','#ff9166','#5eead4'];
   const LOWFREQ_GRAY = '#9ca3af';
@@ -811,22 +823,22 @@
     { id: 't3', name: '분위기업', color: '#ffd23f', lowFreq: false },
     { id: 't4', name: '잔잔', color: '#3b82f6', lowFreq: false },
     { id: 't5', name: '목풀기', color: '#b48ef0', lowFreq: false },
-    { id: 't6', name: '연습중', color: '#5eead4', lowFreq: false },
     { id: 't7', name: '가요', color: '#ff9166', lowFreq: false },
     { id: 't8', name: '아이돌', color: '#6fd3ff', lowFreq: false },
     { id: 't9', name: '해외', color: '#a3e635', lowFreq: false },
     { id: 't10', name: '가끔', color: '#9ca3af', lowFreq: true },
     { id: 't11', name: '듀엣', color: '#9ca3af', lowFreq: true },
   ];
-  const TAG_SCHEMA_VERSION = '2';
+  const TAG_SCHEMA_VERSION = '3';
 
-  // Seed data: imported from the user's uploaded 내_애창곡_리스트.xlsx (122 songs)
-  const DEFAULT_SONGS = [{"id": "s1", "title": "11:11", "artist": "태연", "key": "", "tagIds": ["t4", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s2", "title": "All for you", "artist": "정은지, 서인국", "key": "", "tagIds": ["t7", "t8", "t11"], "score": null, "playCount": 0, "fav": false}, {"id": "s3", "title": "Blackhole", "artist": "윤하", "key": "", "tagIds": ["t1", "t7"], "score": 94, "playCount": 1, "fav": false}, {"id": "s4", "title": "Blueming", "artist": "아이유", "key": "", "tagIds": ["t1", "t7"], "score": 89, "playCount": 1, "fav": false}, {"id": "s5", "title": "Butterfly", "artist": "러브홀릭스", "key": "", "tagIds": ["t3", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s6", "title": "Chandelier", "artist": "Sia", "key": "", "tagIds": ["t2", "t9"], "score": null, "playCount": 0, "fav": false}, {"id": "s7", "title": "Dinosaur", "artist": "악뮤", "key": "", "tagIds": ["t1", "t3", "t7"], "score": 90, "playCount": 0, "fav": false}, {"id": "s8", "title": "Discord", "artist": "QWER", "key": "", "tagIds": ["t1", "t3", "t8"], "score": 96, "playCount": 0, "fav": false}, {"id": "s9", "title": "Drive", "artist": "미연", "key": "", "tagIds": ["t1", "t8"], "score": null, "playCount": 0, "fav": false}, {"id": "s10", "title": "Drowning", "artist": "우즈", "key": "여", "tagIds": ["t2", "t8"], "score": 92, "playCount": 0, "fav": false}, {"id": "s11", "title": "Dynamite", "artist": "BTS", "key": "+1", "tagIds": ["t3", "t8"], "score": null, "playCount": 0, "fav": false}, {"id": "s12", "title": "Euphoria", "artist": "BTS", "key": "+6 D#m", "tagIds": ["t1", "t8"], "score": null, "playCount": 0, "fav": false}, {"id": "s13", "title": "Fall away", "artist": "김범수, 에일리", "key": "", "tagIds": ["t7", "t11"], "score": null, "playCount": 0, "fav": false}, {"id": "s14", "title": "Fire", "artist": "2NE1", "key": "", "tagIds": ["t3", "t8", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s15", "title": "Flashlight", "artist": "Jessie J", "key": "", "tagIds": ["t9", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s16", "title": "Golden", "artist": "Huntr/x", "key": "", "tagIds": ["t2", "t9"], "score": 95, "playCount": 0, "fav": false}, {"id": "s17", "title": "Halo", "artist": "Beyonce", "key": "", "tagIds": ["t2", "t9"], "score": 92, "playCount": 0, "fav": false}, {"id": "s18", "title": "Higher", "artist": "에일리", "key": "", "tagIds": ["t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s19", "title": "Home", "artist": "박효신", "key": "여+1 D", "tagIds": ["t2", "t7"], "score": 98, "playCount": 0, "fav": false}, {"id": "s20", "title": "Hype boy", "artist": "뉴진스", "key": "+2", "tagIds": ["t3", "t8"], "score": 95, "playCount": 0, "fav": false}, {"id": "s21", "title": "I am", "artist": "아이브", "key": "", "tagIds": ["t2", "t8"], "score": 96, "playCount": 0, "fav": false}, {"id": "s22", "title": "Kitsch", "artist": "아이브", "key": "", "tagIds": ["t3", "t8"], "score": null, "playCount": 0, "fav": false}, {"id": "s23", "title": "Let it go", "artist": "이디나멘젤", "key": "", "tagIds": ["t1", "t9"], "score": 99, "playCount": 0, "fav": false}, {"id": "s24", "title": "Let it go", "artist": "Demi Lovato", "key": "", "tagIds": ["t3", "t9"], "score": 99, "playCount": 0, "fav": false}, {"id": "s25", "title": "Like Water", "artist": "웬디", "key": "", "tagIds": ["t1", "t7"], "score": 93, "playCount": 0, "fav": false}, {"id": "s26", "title": "Listen", "artist": "Beyonce", "key": "", "tagIds": ["t2", "t9"], "score": 98, "playCount": 0, "fav": false}, {"id": "s27", "title": "Lonely", "artist": "2NE1", "key": "", "tagIds": ["t4", "t8", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s28", "title": "Love day", "artist": "정은지, 양요섭", "key": "", "tagIds": ["t8", "t11"], "score": null, "playCount": 0, "fav": false}, {"id": "s29", "title": "Love Dive", "artist": "아이브", "key": "", "tagIds": ["t3", "t8", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s30", "title": "Love wins all", "artist": "아이유", "key": "", "tagIds": ["t2", "t7"], "score": 96, "playCount": 1, "fav": false}, {"id": "s31", "title": "Maria", "artist": "김아중", "key": "", "tagIds": ["t3", "t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s32", "title": "Mercy", "artist": "Duffy", "key": "", "tagIds": ["t3", "t9", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s33", "title": "Not a dream", "artist": "송소희", "key": "", "tagIds": ["t1", "t7"], "score": 93, "playCount": 1, "fav": false}, {"id": "s34", "title": "Pop/Star", "artist": "K/DA", "key": "", "tagIds": ["t3", "t9"], "score": 92, "playCount": 1, "fav": false}, {"id": "s35", "title": "Rebel heart", "artist": "아이브", "key": "", "tagIds": ["t1", "t8"], "score": 97, "playCount": 0, "fav": false}, {"id": "s36", "title": "Rolling in the deep", "artist": "Adele", "key": "", "tagIds": ["t4", "t9"], "score": null, "playCount": 0, "fav": false}, {"id": "s37", "title": "Someone like you", "artist": "Adele", "key": "", "tagIds": ["t4", "t9"], "score": null, "playCount": 0, "fav": false}, {"id": "s38", "title": "Step up", "artist": "카라", "key": "", "tagIds": ["t3", "t8"], "score": null, "playCount": 0, "fav": false}, {"id": "s39", "title": "Sunkiss", "artist": "웬디", "key": "", "tagIds": ["t1", "t7"], "score": 96, "playCount": 2, "fav": false}, {"id": "s40", "title": "Take a bow", "artist": "Rihanna", "key": "", "tagIds": ["t4", "t9"], "score": null, "playCount": 0, "fav": false}, {"id": "s41", "title": "U & I", "artist": "에일리", "key": "", "tagIds": ["t1", "t7"], "score": 97, "playCount": 0, "fav": false}, {"id": "s42", "title": "U R", "artist": "태연", "key": "", "tagIds": ["t1", "t7"], "score": 97, "playCount": 1, "fav": false}, {"id": "s43", "title": "Unforgiven", "artist": "르세라핌", "key": "", "tagIds": ["t3", "t8"], "score": null, "playCount": 0, "fav": false}, {"id": "s44", "title": "When this rain stop", "artist": "웬디", "key": "", "tagIds": ["t2", "t7"], "score": 96, "playCount": 2, "fav": false}, {"id": "s45", "title": "거짓말 거짓말 거짓말", "artist": "이적", "key": "+8 F", "tagIds": ["t4", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s46", "title": "고민중독", "artist": "QWER", "key": "", "tagIds": ["t3", "t8"], "score": null, "playCount": 0, "fav": false}, {"id": "s47", "title": "꿈에", "artist": "박정현", "key": "", "tagIds": ["t2", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s48", "title": "나 가거든", "artist": "박정현", "key": "", "tagIds": ["t2", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s49", "title": "나에게로의 초대", "artist": "박기영, 조유진", "key": "", "tagIds": ["t2", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s50", "title": "남자 때문에", "artist": "Joo", "key": "", "tagIds": ["t8", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s51", "title": "낭만고양이", "artist": "체리필터", "key": "", "tagIds": ["t3", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s52", "title": "내 생에 아름다운", "artist": "이예준", "key": "", "tagIds": ["t2", "t7"], "score": 93, "playCount": 0, "fav": false}, {"id": "s53", "title": "내 손을 잡아", "artist": "아이유", "key": "", "tagIds": ["t3", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s54", "title": "내생에 아름다운", "artist": "케이윌", "key": "", "tagIds": ["t4", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s55", "title": "너랑나", "artist": "아이유", "key": "", "tagIds": ["t3", "t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s56", "title": "널 사랑하지 않아", "artist": "어반자파카", "key": "", "tagIds": ["t7", "t11"], "score": null, "playCount": 0, "fav": false}, {"id": "s57", "title": "눈의 꽃", "artist": "이해리", "key": "-1", "tagIds": ["t2", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s58", "title": "덤디덤디", "artist": "여자아이들", "key": "", "tagIds": ["t3", "t8"], "score": null, "playCount": 0, "fav": false}, {"id": "s59", "title": "마음", "artist": "아이유", "key": "", "tagIds": ["t4", "t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s60", "title": "말리꽃", "artist": "이승철", "key": "여+2 Db", "tagIds": ["t2", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s61", "title": "멸종위기사랑", "artist": "이찬혁", "key": "여", "tagIds": ["t2", "t7"], "score": 95, "playCount": 0, "fav": false}, {"id": "s62", "title": "문득", "artist": "에일리", "key": "", "tagIds": ["t1", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s63", "title": "바람기억", "artist": "나얼", "key": "여-2", "tagIds": ["t2", "t7"], "score": 85, "playCount": 0, "fav": false}, {"id": "s64", "title": "바람이 분다", "artist": "한동근, 최효인", "key": "", "tagIds": ["t7", "t11"], "score": null, "playCount": 0, "fav": false}, {"id": "s65", "title": "별의 하모니", "artist": "QWER", "key": "", "tagIds": ["t1", "t8"], "score": 96, "playCount": 0, "fav": false}, {"id": "s66", "title": "불장난", "artist": "블랙핑크", "key": "", "tagIds": ["t3", "t8"], "score": null, "playCount": 0, "fav": false}, {"id": "s67", "title": "불티", "artist": "태연", "key": "", "tagIds": ["t1", "t7"], "score": 95, "playCount": 0, "fav": false}, {"id": "s68", "title": "비밀번호 486", "artist": "윤하", "key": "", "tagIds": ["t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s69", "title": "비밀의 화원", "artist": "아이유", "key": "", "tagIds": ["t4", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s70", "title": "빗소리가 들리면", "artist": "김세정", "key": "", "tagIds": ["t1", "t7"], "score": 96, "playCount": 0, "fav": false}, {"id": "s71", "title": "사랑보다 깊은 상처", "artist": "박정현, 임재범", "key": "", "tagIds": ["t7", "t11"], "score": null, "playCount": 0, "fav": false}, {"id": "s72", "title": "사랑이었다", "artist": "지코(루나)", "key": "", "tagIds": ["t1", "t7"], "score": 95, "playCount": 0, "fav": false}, {"id": "s73", "title": "새벽 가로수길", "artist": "백지영, 스무살", "key": "", "tagIds": ["t7", "t11"], "score": null, "playCount": 0, "fav": false}, {"id": "s74", "title": "소나기", "artist": "아이오아이", "key": "", "tagIds": ["t8", "t10"], "score": 94, "playCount": 0, "fav": false}, {"id": "s75", "title": "숨", "artist": "박효신", "key": "여", "tagIds": ["t1", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s76", "title": "숲의 아이", "artist": "유아", "key": "", "tagIds": ["t1", "t8"], "score": 94, "playCount": 0, "fav": false}, {"id": "s77", "title": "스물다섯, 스물하나", "artist": "한동근, 최효인", "key": "", "tagIds": ["t7", "t11"], "score": null, "playCount": 0, "fav": false}, {"id": "s78", "title": "아이와 나의 바다", "artist": "아이유", "key": "", "tagIds": ["t1", "t7"], "score": 92, "playCount": 0, "fav": false}, {"id": "s79", "title": "안녕", "artist": "조이", "key": "", "tagIds": ["t3", "t8"], "score": 97, "playCount": 0, "fav": false}, {"id": "s80", "title": "안녕이라고 말하지마", "artist": "다비치", "key": "", "tagIds": ["t3", "t7"], "score": 99, "playCount": 0, "fav": false}, {"id": "s81", "title": "안아줘", "artist": "정준일", "key": "여+6 A", "tagIds": ["t2", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s82", "title": "야생화", "artist": "박효신", "key": "여", "tagIds": ["t2", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s83", "title": "어떻게 이별까지 사랑하겠어, 널 사랑하는거지", "artist": "악뮤", "key": "", "tagIds": ["t1", "t7"], "score": 96, "playCount": 1, "fav": false}, {"id": "s84", "title": "어른아이", "artist": "거미", "key": "", "tagIds": ["t1", "t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s85", "title": "에잇", "artist": "아이유", "key": "", "tagIds": ["t4", "t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s86", "title": "여인의 향기", "artist": "에일리", "key": "", "tagIds": ["t3", "t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s87", "title": "여행", "artist": "볼빨간 사춘기", "key": "", "tagIds": ["t1", "t3", "t7"], "score": 93, "playCount": 1, "fav": false}, {"id": "s88", "title": "연", "artist": "빅마마", "key": "", "tagIds": ["t2", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s89", "title": "열애중", "artist": "벤", "key": "", "tagIds": ["t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s90", "title": "오래된노래", "artist": "스탠딩에그", "key": "+4", "tagIds": ["t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s91", "title": "오르트구름", "artist": "윤하", "key": "", "tagIds": ["t3", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s92", "title": "우리 왜 헤어져야 해", "artist": "신예영", "key": "", "tagIds": ["t2", "t7"], "score": 98, "playCount": 0, "fav": false}, {"id": "s93", "title": "우린 남이 될 수 있을까", "artist": "안지영, 스무살", "key": "", "tagIds": ["t7", "t11"], "score": null, "playCount": 0, "fav": false}, {"id": "s94", "title": "이름에게", "artist": "아이유", "key": "", "tagIds": ["t1", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s95", "title": "인사", "artist": "태연", "key": "", "tagIds": ["t1", "t7"], "score": 93, "playCount": 2, "fav": false}, {"id": "s96", "title": "잊지 말아요", "artist": "백지영", "key": "", "tagIds": ["t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s97", "title": "잔소리", "artist": "아이유, 임슬옹", "key": "", "tagIds": ["t7", "t8", "t11"], "score": null, "playCount": 0, "fav": false}, {"id": "s98", "title": "잘부탁드립니다", "artist": "익스", "key": "", "tagIds": ["t3", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s99", "title": "저녁하늘", "artist": "에일리", "key": "", "tagIds": ["t1", "t4", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s100", "title": "좋아", "artist": "민서", "key": "", "tagIds": ["t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s101", "title": "좋은날", "artist": "멜로망스", "key": "+4", "tagIds": ["t1", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s102", "title": "지우개", "artist": "알리", "key": "", "tagIds": ["t4", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s103", "title": "짧은머리", "artist": "정은지, 허각", "key": "", "tagIds": ["t7", "t8", "t11"], "score": null, "playCount": 0, "fav": false}, {"id": "s104", "title": "처음이라서", "artist": "정효빈", "key": "", "tagIds": ["t1", "t7"], "score": 95, "playCount": 0, "fav": false}, {"id": "s105", "title": "첫눈처럼 너에게 가겠다", "artist": "에일리", "key": "", "tagIds": ["t1", "t7"], "score": 97, "playCount": 0, "fav": false}, {"id": "s106", "title": "체념", "artist": "빅마마", "key": "", "tagIds": ["t1", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s107", "title": "총맞은것처럼", "artist": "백지영", "key": "", "tagIds": ["t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s108", "title": "태양계", "artist": "성시경", "key": "+4", "tagIds": ["t4", "t7"], "score": null, "playCount": 0, "fav": false}, {"id": "s109", "title": "텔레파시", "artist": "윤하", "key": "", "tagIds": ["t3", "t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s110", "title": "항해", "artist": "김세정", "key": "", "tagIds": ["t1", "t8"], "score": 94, "playCount": 0, "fav": false}, {"id": "s111", "title": "행복", "artist": "레드벨벳", "key": "", "tagIds": ["t3", "t8"], "score": 97, "playCount": 0, "fav": false}, {"id": "s112", "title": "헤어지자 말해요", "artist": "박재정", "key": "여+1", "tagIds": ["t2", "t7"], "score": 97, "playCount": 0, "fav": false}, {"id": "s113", "title": "호랑수월가", "artist": "탑현", "key": "", "tagIds": ["t4", "t7", "t10"], "score": null, "playCount": 0, "fav": false}, {"id": "s114", "title": "홀로", "artist": "정키", "key": "", "tagIds": ["t2", "t4", "t7"], "score": null, "playCount": 0, "fav": false}];
+  // Seed data: imported from the user's uploaded 내_애창곡_리스트__1_.xlsx (120 songs)
+  const DEFAULT_SONGS = [{"id": "s1", "title": "11:11", "artist": "태연", "key": "", "tagIds": ["t4", "t7"], "score": 94, "playCount": 0, "fav": false, "practice": false}, {"id": "s2", "title": "All for you", "artist": "정은지, 서인국", "key": "", "tagIds": ["t7", "t8", "t11"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s3", "title": "Blackhole", "artist": "윤하", "key": "", "tagIds": ["t1", "t7"], "score": 94, "playCount": 1, "fav": false, "practice": false}, {"id": "s4", "title": "Blueming", "artist": "아이유", "key": "", "tagIds": ["t1", "t7"], "score": 89, "playCount": 1, "fav": false, "practice": false}, {"id": "s5", "title": "Butterfly", "artist": "러브홀릭스", "key": "", "tagIds": ["t3", "t7"], "score": 98, "playCount": 0, "fav": false, "practice": false}, {"id": "s6", "title": "Chandelier", "artist": "Sia", "key": "", "tagIds": ["t2", "t9"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s7", "title": "Dinosaur", "artist": "악뮤", "key": "", "tagIds": ["t1", "t3", "t7"], "score": 90, "playCount": 0, "fav": false, "practice": false}, {"id": "s8", "title": "Discord", "artist": "QWER", "key": "", "tagIds": ["t1", "t3", "t8"], "score": 96, "playCount": 0, "fav": false, "practice": false}, {"id": "s9", "title": "Drive", "artist": "미연", "key": "", "tagIds": ["t1", "t8"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s10", "title": "Drowning", "artist": "우즈", "key": "여", "tagIds": ["t2", "t8"], "score": 92, "playCount": 0, "fav": false, "practice": false}, {"id": "s11", "title": "Dynamite", "artist": "BTS", "key": "+1", "tagIds": ["t3", "t8"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s12", "title": "Euphoria", "artist": "BTS", "key": "+6 D#m", "tagIds": ["t1", "t8"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s13", "title": "Fall away", "artist": "김범수, 에일리", "key": "", "tagIds": ["t7", "t11"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s14", "title": "Fire", "artist": "2NE1", "key": "", "tagIds": ["t3", "t8", "t10"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s15", "title": "Flashlight", "artist": "Jessie J", "key": "", "tagIds": ["t9", "t10"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s16", "title": "Golden", "artist": "Huntr/x", "key": "", "tagIds": ["t2", "t9"], "score": 95, "playCount": 0, "fav": false, "practice": false}, {"id": "s17", "title": "Halo", "artist": "Beyonce", "key": "", "tagIds": ["t2", "t9"], "score": 92, "playCount": 0, "fav": false, "practice": false}, {"id": "s18", "title": "Higher", "artist": "에일리", "key": "", "tagIds": ["t7", "t10"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s19", "title": "Home", "artist": "박효신", "key": "여+1 D", "tagIds": ["t2", "t7"], "score": 98, "playCount": 0, "fav": false, "practice": false}, {"id": "s20", "title": "Hype boy", "artist": "뉴진스", "key": "+2", "tagIds": ["t3", "t8"], "score": 95, "playCount": 0, "fav": false, "practice": false}, {"id": "s21", "title": "I am", "artist": "아이브", "key": "", "tagIds": ["t2", "t8"], "score": 96, "playCount": 0, "fav": false, "practice": false}, {"id": "s22", "title": "Kitsch", "artist": "아이브", "key": "", "tagIds": ["t3", "t8"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s23", "title": "Let it go", "artist": "이디나멘젤", "key": "", "tagIds": ["t1", "t9"], "score": 99, "playCount": 0, "fav": false, "practice": false}, {"id": "s24", "title": "Let it go", "artist": "Demi Lovato", "key": "", "tagIds": ["t3", "t9"], "score": 99, "playCount": 0, "fav": false, "practice": false}, {"id": "s25", "title": "Like Water", "artist": "웬디", "key": "", "tagIds": ["t1", "t7"], "score": 93, "playCount": 0, "fav": false, "practice": false}, {"id": "s26", "title": "Listen", "artist": "Beyonce", "key": "", "tagIds": ["t2", "t9"], "score": 98, "playCount": 0, "fav": false, "practice": false}, {"id": "s27", "title": "Lonely", "artist": "2NE1", "key": "", "tagIds": ["t4", "t8", "t10"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s28", "title": "Love day", "artist": "정은지, 양요섭", "key": "", "tagIds": ["t8", "t11"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s29", "title": "Love Dive", "artist": "아이브", "key": "", "tagIds": ["t3", "t8", "t10"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s30", "title": "Love wins all", "artist": "아이유", "key": "", "tagIds": ["t1", "t7"], "score": 96, "playCount": 2, "fav": false, "practice": false}, {"id": "s31", "title": "Maria", "artist": "김아중", "key": "", "tagIds": ["t3", "t7", "t10"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s32", "title": "Mercy", "artist": "Duffy", "key": "", "tagIds": ["t3", "t9", "t10"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s33", "title": "Not a dream", "artist": "송소희", "key": "", "tagIds": ["t1", "t7"], "score": 93, "playCount": 1, "fav": false, "practice": true}, {"id": "s34", "title": "Pop/Star", "artist": "K/DA", "key": "", "tagIds": ["t3", "t9"], "score": 92, "playCount": 1, "fav": false, "practice": false}, {"id": "s35", "title": "Rebel heart", "artist": "아이브", "key": "", "tagIds": ["t1", "t8"], "score": 97, "playCount": 0, "fav": false, "practice": false}, {"id": "s36", "title": "Rolling in the deep", "artist": "Adele", "key": "", "tagIds": ["t4", "t9"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s37", "title": "Someone like you", "artist": "Adele", "key": "", "tagIds": ["t4", "t9"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s38", "title": "Step up", "artist": "카라", "key": "", "tagIds": ["t3", "t8"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s39", "title": "Sunkiss", "artist": "웬디", "key": "", "tagIds": ["t1", "t7"], "score": 96, "playCount": 2, "fav": false, "practice": false}, {"id": "s40", "title": "Take a bow", "artist": "Rihanna", "key": "", "tagIds": ["t4", "t9"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s41", "title": "U & I", "artist": "에일리", "key": "", "tagIds": ["t1", "t7"], "score": 97, "playCount": 0, "fav": false, "practice": false}, {"id": "s42", "title": "U R", "artist": "태연", "key": "", "tagIds": ["t1", "t7"], "score": 97, "playCount": 1, "fav": false, "practice": false}, {"id": "s43", "title": "Unforgiven", "artist": "르세라핌", "key": "", "tagIds": ["t3", "t8"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s44", "title": "When this rain stop", "artist": "웬디", "key": "", "tagIds": ["t2", "t7"], "score": 96, "playCount": 3, "fav": true, "practice": true}, {"id": "s45", "title": "거짓말 거짓말 거짓말", "artist": "이적", "key": "+8 F", "tagIds": ["t4", "t7"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s46", "title": "고민중독", "artist": "QWER", "key": "", "tagIds": ["t3", "t8"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s47", "title": "꿈에", "artist": "박정현", "key": "", "tagIds": ["t2", "t7"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s48", "title": "나 가거든", "artist": "박정현", "key": "", "tagIds": ["t2", "t7"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s49", "title": "나에게로의 초대", "artist": "박기영, 조유진", "key": "", "tagIds": ["t2", "t7"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s50", "title": "남자 때문에", "artist": "Joo", "key": "", "tagIds": ["t8", "t10"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s51", "title": "낭만고양이", "artist": "체리필터", "key": "", "tagIds": ["t3", "t7"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s52", "title": "내 생에 아름다운", "artist": "이예준", "key": "", "tagIds": ["t2", "t7"], "score": 93, "playCount": 0, "fav": false, "practice": false}, {"id": "s53", "title": "내 손을 잡아", "artist": "아이유", "key": "", "tagIds": ["t3", "t7"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s54", "title": "내생에 아름다운", "artist": "케이윌", "key": "", "tagIds": ["t4", "t7"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s55", "title": "너랑나", "artist": "아이유", "key": "", "tagIds": ["t3", "t7", "t10"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s56", "title": "널 사랑하지 않아", "artist": "어반자파카", "key": "", "tagIds": ["t7", "t11"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s57", "title": "눈의 꽃", "artist": "이해리", "key": "-1", "tagIds": ["t2", "t7"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s58", "title": "덤디덤디", "artist": "여자아이들", "key": "", "tagIds": ["t3", "t8"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s59", "title": "마음", "artist": "아이유", "key": "", "tagIds": ["t4", "t7", "t10"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s60", "title": "말리꽃", "artist": "이승철", "key": "여+2 Db", "tagIds": ["t2", "t7"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s61", "title": "멸종위기사랑", "artist": "이찬혁", "key": "", "tagIds": ["t2", "t7"], "score": 95, "playCount": 1, "fav": false, "practice": false}, {"id": "s62", "title": "문득", "artist": "에일리", "key": "", "tagIds": ["t1", "t7"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s63", "title": "바람기억", "artist": "나얼", "key": "여-2", "tagIds": ["t2", "t7"], "score": 85, "playCount": 0, "fav": false, "practice": false}, {"id": "s64", "title": "바람이 분다", "artist": "한동근, 최효인", "key": "", "tagIds": ["t7", "t11"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s65", "title": "별의 하모니", "artist": "QWER", "key": "", "tagIds": ["t1", "t8"], "score": 96, "playCount": 1, "fav": false, "practice": false}, {"id": "s66", "title": "불장난", "artist": "블랙핑크", "key": "", "tagIds": ["t3", "t8"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s67", "title": "불티", "artist": "태연", "key": "", "tagIds": ["t1", "t7"], "score": 95, "playCount": 1, "fav": false, "practice": false}, {"id": "s68", "title": "비밀번호 486", "artist": "윤하", "key": "", "tagIds": ["t7", "t10"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s69", "title": "비밀의 화원", "artist": "아이유", "key": "", "tagIds": ["t4", "t7"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s70", "title": "빗소리가 들리면", "artist": "김세정", "key": "", "tagIds": ["t1", "t7"], "score": 96, "playCount": 0, "fav": false, "practice": false}, {"id": "s71", "title": "사랑보다 깊은 상처", "artist": "박정현, 임재범", "key": "", "tagIds": ["t7", "t11"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s72", "title": "사랑이었다", "artist": "지코(루나)", "key": "", "tagIds": ["t1", "t7"], "score": 95, "playCount": 0, "fav": false, "practice": false}, {"id": "s73", "title": "새벽 가로수길", "artist": "백지영, 스무살", "key": "", "tagIds": ["t7", "t11"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s74", "title": "소나기", "artist": "아이오아이", "key": "", "tagIds": ["t8", "t10"], "score": 94, "playCount": 0, "fav": false, "practice": false}, {"id": "s75", "title": "숨", "artist": "박효신", "key": "여", "tagIds": ["t1", "t7"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s76", "title": "숲의 아이", "artist": "유아", "key": "", "tagIds": ["t1", "t8"], "score": 94, "playCount": 0, "fav": false, "practice": false}, {"id": "s77", "title": "스물다섯, 스물하나", "artist": "한동근, 최효인", "key": "", "tagIds": ["t7", "t11"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s78", "title": "아이와 나의 바다", "artist": "아이유", "key": "", "tagIds": ["t1", "t7"], "score": 92, "playCount": 0, "fav": false, "practice": false}, {"id": "s79", "title": "안녕", "artist": "조이", "key": "", "tagIds": ["t3", "t8"], "score": 97, "playCount": 0, "fav": false, "practice": false}, {"id": "s80", "title": "안녕이라고 말하지마", "artist": "다비치", "key": "", "tagIds": ["t3", "t7"], "score": 99, "playCount": 0, "fav": false, "practice": false}, {"id": "s81", "title": "안아줘", "artist": "정준일", "key": "여+6 A", "tagIds": ["t2", "t7"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s82", "title": "야생화", "artist": "박효신", "key": "여", "tagIds": ["t2", "t7"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s83", "title": "어떻게 이별까지 사랑하겠어, 널 사랑하는거지", "artist": "악뮤", "key": "", "tagIds": ["t1", "t7"], "score": 96, "playCount": 1, "fav": false, "practice": false}, {"id": "s84", "title": "어른아이", "artist": "거미", "key": "", "tagIds": ["t1", "t7", "t10"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s85", "title": "에잇", "artist": "아이유", "key": "", "tagIds": ["t4", "t7", "t10"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s86", "title": "여인의 향기", "artist": "에일리", "key": "", "tagIds": ["t3", "t7", "t10"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s87", "title": "여행", "artist": "볼빨간 사춘기", "key": "", "tagIds": ["t1", "t3", "t7"], "score": 93, "playCount": 1, "fav": false, "practice": false}, {"id": "s88", "title": "연", "artist": "빅마마", "key": "", "tagIds": ["t2", "t7"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s89", "title": "열애중", "artist": "벤", "key": "", "tagIds": ["t7", "t10"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s90", "title": "오래된노래", "artist": "스탠딩에그", "key": "+4", "tagIds": ["t7", "t10"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s91", "title": "오르트구름", "artist": "윤하", "key": "", "tagIds": ["t3", "t7"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s92", "title": "우리 왜 헤어져야 해", "artist": "신예영", "key": "", "tagIds": ["t2", "t7"], "score": 98, "playCount": 0, "fav": false, "practice": false}, {"id": "s93", "title": "우린 남이 될 수 있을까", "artist": "안지영, 스무살", "key": "", "tagIds": ["t7", "t11"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s94", "title": "이름에게", "artist": "아이유", "key": "", "tagIds": ["t1", "t7"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s95", "title": "인사", "artist": "태연", "key": "", "tagIds": ["t1", "t5", "t7"], "score": 93, "playCount": 2, "fav": false, "practice": true}, {"id": "s96", "title": "잊지 말아요", "artist": "백지영", "key": "", "tagIds": ["t7", "t10"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s97", "title": "잔소리", "artist": "아이유, 임슬옹", "key": "", "tagIds": ["t7", "t8", "t11"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s98", "title": "잘부탁드립니다", "artist": "익스", "key": "", "tagIds": ["t3", "t7"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s99", "title": "저녁하늘", "artist": "에일리", "key": "", "tagIds": ["t1", "t4", "t7"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s100", "title": "좋아", "artist": "민서", "key": "", "tagIds": ["t7", "t10"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s101", "title": "좋은날", "artist": "멜로망스", "key": "+4", "tagIds": ["t1", "t7"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s102", "title": "지우개", "artist": "알리", "key": "", "tagIds": ["t4", "t7"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s103", "title": "짧은머리", "artist": "정은지, 허각", "key": "", "tagIds": ["t7", "t8", "t11"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s104", "title": "처음이라서", "artist": "정효빈", "key": "", "tagIds": ["t1", "t7"], "score": 95, "playCount": 0, "fav": false, "practice": false}, {"id": "s105", "title": "첫눈처럼 너에게 가겠다", "artist": "에일리", "key": "", "tagIds": ["t1", "t5", "t7"], "score": 97, "playCount": 3, "fav": false, "practice": false}, {"id": "s106", "title": "체념", "artist": "빅마마", "key": "", "tagIds": ["t1", "t7"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s107", "title": "총맞은것처럼", "artist": "백지영", "key": "", "tagIds": ["t7", "t10"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s108", "title": "태양계", "artist": "성시경", "key": "+4", "tagIds": ["t4", "t7"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s109", "title": "텔레파시", "artist": "윤하", "key": "", "tagIds": ["t3", "t7", "t10"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s110", "title": "항해", "artist": "김세정", "key": "", "tagIds": ["t1", "t8"], "score": 94, "playCount": 0, "fav": false, "practice": false}, {"id": "s111", "title": "행복", "artist": "레드벨벳", "key": "", "tagIds": ["t3", "t8"], "score": 97, "playCount": 0, "fav": false, "practice": false}, {"id": "s112", "title": "헤어지자 말해요", "artist": "박재정", "key": "여+1", "tagIds": ["t2", "t7"], "score": 97, "playCount": 0, "fav": false, "practice": false}, {"id": "s113", "title": "호랑수월가", "artist": "탑현", "key": "", "tagIds": ["t4", "t7", "t10"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s114", "title": "홀로", "artist": "정키", "key": "", "tagIds": ["t2", "t4", "t7"], "score": null, "playCount": 0, "fav": false, "practice": false}, {"id": "s115", "title": "새봄의 노래", "artist": "도영", "key": "여", "tagIds": ["t2", "t7"], "score": 96, "playCount": 2, "fav": true, "practice": false}, {"id": "s116", "title": "바람의 노래", "artist": "소향", "key": "", "tagIds": ["t2", "t7"], "score": 94, "playCount": 0, "fav": false, "practice": false}, {"id": "s117", "title": "사계", "artist": "태연", "key": "", "tagIds": ["t1", "t7"], "score": 89, "playCount": 0, "fav": false, "practice": false}, {"id": "s118", "title": "To. X", "artist": "태연", "key": "", "tagIds": ["t1", "t4", "t7"], "score": 97, "playCount": 0, "fav": false, "practice": false}, {"id": "s119", "title": "청춘만화", "artist": "이무진", "key": "여", "tagIds": ["t1", "t7"], "score": 92, "playCount": 0, "fav": false, "practice": false}, {"id": "s120", "title": "Love Love Love", "artist": "에픽하이", "key": "", "tagIds": ["t7", "t11"], "score": 81, "playCount": 0, "fav": false, "practice": false}];
 
   let songs = [];
   let tags = [];
   let activeTagFilters = new Set();
   let favOnly = false;
+  let practiceOnly = false;
   let searchQuery = '';
   let nickname = '';
   let sortMode = 'alpha';
@@ -871,6 +883,12 @@
       if (typeof s.playCount !== 'number') s.playCount = 0;
       if (s.score === undefined) s.score = null;
       if (!Array.isArray(s.tagIds)) s.tagIds = [];
+      // 예전 '연습중' 태그(t6)를 곡 자체의 연습중 표시로 이전
+      if (s.tagIds.includes('t6')) {
+        s.practice = true;
+        s.tagIds = s.tagIds.filter(id => id !== 't6');
+      }
+      if (typeof s.practice !== 'boolean') s.practice = false;
     });
 
     try { nickname = localStorage.getItem(NICKNAME_KEY) || ''; } catch (e) { nickname = ''; }
@@ -979,10 +997,17 @@
 
     const favChip = el('button', 'chip' + (favOnly ? ' active' : ''));
     favChip.style.setProperty('--chip-color', 'var(--accent-magenta)');
-    favChip.textContent = favOnly ? '♥' : '♡';
+    favChip.textContent = '♥';
     favChip.title = '하트 표시한 곡만 보기';
     favChip.onclick = () => { favOnly = !favOnly; render(); };
     row.appendChild(favChip);
+
+    const practiceChip = el('button', 'chip' + (practiceOnly ? ' active' : ''));
+    practiceChip.style.setProperty('--chip-color', 'var(--accent-cyan)');
+    practiceChip.textContent = '☘\uFE0E';
+    practiceChip.title = '연습중인 곡만 보기';
+    practiceChip.onclick = () => { practiceOnly = !practiceOnly; render(); };
+    row.appendChild(practiceChip);
 
     tags.forEach(tag => {
       const chip = el('button', 'chip' + (activeTagFilters.has(tag.id) ? ' active' : '') + (tag.lowFreq ? ' chip-subtle' : ''));
@@ -1019,6 +1044,17 @@
         const haystack = `${s.title} ${s.artist} ${s.key} ${tagNames}`.toLowerCase();
         return haystack.includes(q);
       });
+      if (favOnly) list = list.filter(s => s.fav);
+      if (practiceOnly) list = list.filter(s => s.practice);
+      return sortSongList(list);
+    }
+
+    if (practiceOnly) {
+      // 연습중 필터는 저빈도 태그 숨김과 무관하게 연습중인 곡을 모두 보여준다
+      list = list.filter(s => s.practice);
+      if (activeTagFilters.size > 0) {
+        list = list.filter(s => s.tagIds.some(id => activeTagFilters.has(id)));
+      }
       if (favOnly) list = list.filter(s => s.fav);
       return sortSongList(list);
     }
@@ -1078,6 +1114,7 @@
     const card = el('div', 'song-card');
     card.onclick = () => openQuickEdit(song);
 
+    const side = el('div', 'card-side');
     const heartBtn = el('button', 'heart-btn' + (song.fav ? ' on' : ''));
     heartBtn.textContent = '♥';
     heartBtn.title = song.fav ? '하트 해제' : '하트 표시';
@@ -1087,6 +1124,17 @@
       saveSongs();
       render();
     };
+    const practiceBtn = el('button', 'practice-btn' + (song.practice ? ' on' : ''));
+    practiceBtn.textContent = '☘\uFE0E';
+    practiceBtn.title = song.practice ? '연습중 해제' : '연습중으로 표시';
+    practiceBtn.onclick = (e) => {
+      e.stopPropagation();
+      song.practice = !song.practice;
+      saveSongs();
+      render();
+    };
+    side.appendChild(heartBtn);
+    side.appendChild(practiceBtn);
 
     const main = el('div', 'song-main');
     const title = el('p', 'song-title');
@@ -1118,7 +1166,7 @@
     scoreCol.appendChild(led);
     scoreCol.appendChild(playBadge);
 
-    card.appendChild(heartBtn);
+    card.appendChild(side);
     card.appendChild(main);
     card.appendChild(scoreCol);
     return card;
@@ -1137,7 +1185,7 @@
 
     if (songs.length === 0) {
       const empty = el('div', 'empty-state');
-      empty.innerHTML = `<div class="emoji">🎤</div><div class="msg1">아직 등록된 노래가 없어요</div><div class="msg2">오른쪽 아래 + 버튼으로 첫 애창곡을 추가해보세요</div>`;
+      empty.innerHTML = `<div class="emoji">🎤</div><div class="msg1">아직 등록된 노래가 없어요</div><div class="msg2">오른쪽 아래 + 버튼으로 첫 곡을 추가해보세요</div>`;
       wrap.appendChild(empty);
       return;
     }
@@ -1145,7 +1193,7 @@
       const empty = el('div', 'empty-state');
       const msg2 = searchQuery.trim()
         ? '다른 검색어로 찾아보세요'
-        : (favOnly ? '하트 표시한 곡이 아직 없어요' : '다른 태그를 선택해보세요');
+        : (practiceOnly ? '연습중으로 표시한 곡이 아직 없어요' : (favOnly ? '하트 표시한 곡이 아직 없어요' : '다른 태그를 선택해보세요'));
       empty.innerHTML = `<div class="emoji">🔍</div><div class="msg1">조건에 맞는 노래가 없어요</div><div class="msg2">${msg2}</div>`;
       wrap.appendChild(empty);
       return;
@@ -1196,7 +1244,7 @@
     toggleBtn.textContent = unset ? '점수 입력하기' : '점수 없음으로 표시';
   }
 
-  function openSongModal(song) {
+  function openSongModal(song, reuseHistory) {
     editingSongId = song ? song.id : null;
     $('#songModalTitle').textContent = song ? '상세수정' : '노래 추가';
     $('#inputTitle').value = song ? song.title : '';
@@ -1211,11 +1259,18 @@
     $('#deleteSongBtn').style.display = song ? 'block' : 'none';
     renderTagSelectWrap();
     $('#songModalBackdrop').classList.add('open');
+    const closeFn = () => {
+      $('#songModalBackdrop').classList.remove('open');
+      editingSongId = null;
+    };
+    if (reuseHistory) swapModalHistory('songModal', closeFn);
+    else pushModalHistory('songModal', closeFn);
   }
 
   function closeSongModal() {
     $('#songModalBackdrop').classList.remove('open');
     editingSongId = null;
+    popModalHistory('songModal');
   }
 
   async function handleSaveSong() {
@@ -1295,11 +1350,16 @@
     qeSelectedTagIds = new Set(song.tagIds);
     renderQeTagSelectWrap();
     $('#quickEditBackdrop').classList.add('open');
+    pushModalHistory('quickEdit', () => {
+      $('#quickEditBackdrop').classList.remove('open');
+      qeSongId = null;
+    });
   }
 
   function closeQuickEdit() {
     $('#quickEditBackdrop').classList.remove('open');
     qeSongId = null;
+    popModalHistory('quickEdit');
   }
 
   async function handleQuickSave() {
@@ -1314,6 +1374,44 @@
     render();
     showToast('저장했어요');
   }
+
+  // ---------- 모달 히스토리 (안드로이드 뒤로가기 대응) ----------
+  // 모달을 열 때 히스토리 항목을 하나 쌓아두고, 뒤로가기가 들어오면 앱을 종료하는 대신
+  // 가장 위에 열린 모달만 닫는다. 메인 화면(스택이 빈 상태)에서는 평소처럼 앱이 종료된다.
+  const modalStack = [];
+  let closingFromPopstate = false;
+
+  function pushModalHistory(id, closeFn) {
+    modalStack.push({ id, closeFn });
+    try { history.pushState({ karaokeModal: id }, ''); } catch (e) {}
+  }
+
+  // 닫기/취소 버튼으로 닫을 때: 쌓아둔 히스토리 항목도 같이 되감는다
+  function popModalHistory(id) {
+    if (closingFromPopstate) return;
+    const idx = modalStack.map(m => m.id).lastIndexOf(id);
+    if (idx === -1) return;
+    const steps = modalStack.length - idx;
+    modalStack.splice(idx, steps);
+    closingFromPopstate = true;
+    try { history.go(-steps); } catch (e) {}
+    setTimeout(() => { closingFromPopstate = false; }, 0);
+  }
+
+  // 모달 → 모달 전환(퀵에딧 → 상세수정)에서는 히스토리 항목을 새로 쌓지 않고 재사용한다
+  function swapModalHistory(id, closeFn) {
+    if (modalStack.length === 0) { pushModalHistory(id, closeFn); return; }
+    modalStack[modalStack.length - 1] = { id, closeFn };
+  }
+
+  window.addEventListener('popstate', () => {
+    if (closingFromPopstate) return;
+    const m = modalStack.pop();
+    if (m) {
+      closingFromPopstate = true;
+      try { m.closeFn(); } finally { closingFromPopstate = false; }
+    }
+  });
 
   function repositionTagByLowFreq(tag) {
     const idx = tags.indexOf(tag);
@@ -1473,13 +1571,14 @@
       '태그': sortTagIds(s.tagIds).map(id => { const t = tagById(id); return t ? t.name : null; }).filter(Boolean).join(', '),
       '점수': (s.score === null || s.score === undefined) ? '' : s.score,
       '부른 횟수': s.playCount || 0,
-      '하트': s.fav ? 'O' : ''
+      '하트': s.fav ? 'O' : '',
+      '연습중': s.practice ? 'O' : ''
     }));
-    const ws = XLSX.utils.json_to_sheet(rows, { header: ['제목','가수','키 변화','태그','점수','부른 횟수','하트'] });
-    ws['!cols'] = [{wch:20},{wch:14},{wch:14},{wch:24},{wch:8},{wch:10},{wch:6}];
+    const ws = XLSX.utils.json_to_sheet(rows, { header: ['제목','가수','키 변화','태그','점수','부른 횟수','하트','연습중'] });
+    ws['!cols'] = [{wch:20},{wch:14},{wch:14},{wch:24},{wch:8},{wch:10},{wch:6},{wch:8}];
     const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, '내 애창곡');
-    XLSX.writeFile(wb, '내_애창곡_리스트.xlsx');
+    XLSX.utils.book_append_sheet(wb, ws, '노래 리스트');
+    XLSX.writeFile(wb, '내_노래_리스트.xlsx');
     showToast('엑셀 파일을 내려받았어요');
   }
 
@@ -1524,15 +1623,21 @@
           const scoreRaw = row['점수'] ?? row['score'] ?? row['Score'];
           const parsedScore = parseInt(scoreRaw, 10);
           const score = !isNaN(parsedScore) ? Math.min(100, Math.max(0, parsedScore)) : null;
-          const tagNames = splitTagNames(row['태그'] ?? row['tags'] ?? row['Tags'] ?? '');
+          const allTagNames = splitTagNames(row['태그'] ?? row['tags'] ?? row['Tags'] ?? '');
+          // 예전 파일에서 '연습중'이 태그로 들어있으면 태그가 아니라 연습중 표시로 변환
+          const legacyPractice = allTagNames.some(n => n === '연습중' || n === '연습');
+          const tagNames = allTagNames.filter(n => n !== '연습중' && n !== '연습');
           const tagIds = sortTagIds(tagNames.map(name => getOrCreateTag(name).id));
           const playCountRaw = row['부른 횟수'] ?? row['부른횟수'] ?? row['playCount'] ?? row['Play Count'];
           const parsedPlayCount = parseInt(playCountRaw, 10);
           const playCount = !isNaN(parsedPlayCount) && parsedPlayCount >= 0 ? parsedPlayCount : 0;
+          const TRUTHY = ['o','y','yes','true','1','v','♥','ㅇ'];
           const favRaw = String(row['하트'] ?? row['좋아요'] ?? row['fav'] ?? row['Favorite'] ?? '').trim().toLowerCase();
-          const fav = ['o','O','y','yes','true','1','v','♥','y'].includes(favRaw);
+          const fav = TRUTHY.includes(favRaw);
+          const practiceRaw = String(row['연습중'] ?? row['연습'] ?? row['practice'] ?? row['Practice'] ?? '').trim().toLowerCase();
+          const practice = TRUTHY.includes(practiceRaw) || legacyPractice;
 
-          newSongs.push({ id: uid(), title, artist, key, score, tagIds, playCount, fav });
+          newSongs.push({ id: uid(), title, artist, key, score, tagIds, playCount, fav, practice });
         });
 
         if (newSongs.length === 0) {
@@ -1599,8 +1704,10 @@
   $('#qeSaveBtn').onclick = handleQuickSave;
   $('#qeDetailBtn').onclick = () => {
     const song = songs.find(s => s.id === qeSongId);
-    closeQuickEdit();
-    if (song) openSongModal(song);
+    // 히스토리 항목은 그대로 두고 모달만 교체 (뒤로가기 한 번에 목록으로 돌아가도록)
+    $('#quickEditBackdrop').classList.remove('open');
+    qeSongId = null;
+    if (song) openSongModal(song, true);
   };
   $('#quickEditBackdrop').onclick = (e) => { if (e.target.id === 'quickEditBackdrop') closeQuickEdit(); };
 
@@ -1620,14 +1727,19 @@
     updateHeader();
   };
 
+  function closeSettingsModal() {
+    $('#tagModalBackdrop').classList.remove('open');
+    popModalHistory('settings');
+  }
   $('#gearBtn').onclick = () => {
     $('#nicknameInput').value = nickname;
     renderTagManageList();
     renderNewTagSwatches();
     $('#tagModalBackdrop').classList.add('open');
+    pushModalHistory('settings', () => $('#tagModalBackdrop').classList.remove('open'));
   };
-  $('#closeTagModalBtn').onclick = () => $('#tagModalBackdrop').classList.remove('open');
-  $('#tagModalBackdrop').onclick = (e) => { if (e.target.id === 'tagModalBackdrop') $('#tagModalBackdrop').classList.remove('open'); };
+  $('#closeTagModalBtn').onclick = closeSettingsModal;
+  $('#tagModalBackdrop').onclick = (e) => { if (e.target.id === 'tagModalBackdrop') closeSettingsModal(); };
   $('#addTagBtn').onclick = handleAddTag;
 
   loadData();
